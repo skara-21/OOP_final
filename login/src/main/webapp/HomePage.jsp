@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="shortcut icon" href="images/Bulb.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/reset.css">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <style><%@include file="./styles/reset.css"%></style>
+    <style><%@include file="./styles/style.css"%></style>
 
 </head>
 
