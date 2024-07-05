@@ -24,6 +24,10 @@
             <a href="HomePage.jsp" class="header_logo_box">
                 <img class="header_logo" src="images/RacxaIqneba.png">
             </a>
+             <div class="search">
+                <label for="name" class="search_icon"><i class="fas fa-search"></i></label>
+                <input type="text" id="name" name="name" required minlength="4" maxlength="64" size="20" />
+            </div>
             <div class="friends_section">
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
