@@ -145,8 +145,9 @@ body {
 .profile_div2,
 .profile_div3,
 .profile_div4,
-.quiz_div5, .performance_div1,
-.performance_div2{
+.quiz_div5,
+.performance_div1,
+.performance_div2 {
     width: 100%;
     height: 730px;
     display: flex;
@@ -184,7 +185,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.news, .performance_div2 {
+.news,
+.performance_div2 {
     height: 730px;
 }
 
@@ -202,7 +204,7 @@ body {
 .quiz_div3,
 .quiz_div4,
 .quiz_div5,
-.performance_div1  {
+.performance_div1 {
     height: 500px;
 }
 
@@ -218,7 +220,8 @@ h2 {
 
 .profile_div1_image,
 .profile_div2_created,
-.quiz_text, .performance_quiz_text {
+.quiz_text,
+.performance_quiz_text {
     height: 430px;
 }
 
@@ -227,8 +230,10 @@ h2 {
 }
 
 .profile_div1_rating,
-.profile_div2_name, .performance_quiz_name,
-.quiz_name, .performance_details{
+.profile_div2_name,
+.performance_quiz_name,
+.quiz_name,
+.performance_details {
     height: 60px;
 }
 
@@ -242,7 +247,9 @@ h2 {
 }
 
 .profile_div2_name,
-.quiz_name, .performance_quiz_name, .performance_details {
+.quiz_name,
+.performance_quiz_name,
+.performance_details {
     margin-bottom: 15px;
 }
 
@@ -281,4 +288,10 @@ h2 {
 
 .performance_div2 {
     height: inherit;
+}
+
+.quizes,
+.my_quizes {
+    height: 730px;
+    justify-content: space-between;
 }

@@ -33,7 +33,7 @@
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
             </div>
-            <a href="contact.html" class="user_section">
+            <a href="profile.jsp" class="user_section">
                 <i class="fa-regular fa-user"></i>
             </a>
 
