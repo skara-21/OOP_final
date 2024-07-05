@@ -14,5 +14,6 @@ public class initializer implements ServletContextListener {
         accountManager db=new accountManager();
         ServletContext tmp=e.getServletContext();
         tmp.setAttribute("MY_DB",db);
+
     }
 }

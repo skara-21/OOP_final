@@ -16,6 +16,8 @@ public class loginServlet extends HttpServlet {
         if(db.correctCredentials(request.getParameter("username"),request.getParameter("pass"))){
             RequestDispatcher tmp=request.getRequestDispatcher("welcome.jsp");
             tmp.forward(request,response);
+
+
         }
         else{
             RequestDispatcher tmp=request.getRequestDispatcher("tryAgain.jsp");

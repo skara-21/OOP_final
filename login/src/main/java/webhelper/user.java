@@ -26,13 +26,6 @@ public class user {
         return dbquiz.getCreatedQuizesById(userId);
     }
 
-    public ArrayList<quiz> getPopularQuizzes(){
-        return dbquiz.getPopularQuizzesdb();
-    }
-
-    public ArrayList<quiz> getRecentQuizzes(){
-        return dbquiz.getRecentQuizzesdb();
-    }
 
     public void addFriend(user newFriend){
         friends.add(newFriend);
@@ -63,6 +56,7 @@ public class user {
     }
 
     //qvizis baza join qvizi+user quiz_id=quiz_id
+
     public ArrayList<quiz> getFeedInfo(){
         return dbquiz.getFeedInfodb(friends);
     }
