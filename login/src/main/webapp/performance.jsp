@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Performance Page</title>
     <link rel="shortcut icon" href="images/RacxaIqneba.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
-     <style><%@include file="./styles/reset.css"%></style>
-     <style><%@include file="./styles/style.css"%></style>
+    <style><%@include file="./styles/reset.css"%></style>
+    <style><%@include file="./styles/style.css"%></style>
 
 </head>
 
@@ -34,31 +34,21 @@
         </header>
 
         <!-- SECTION 1 -->
-        <section class="home_page profile_page">
-            <div class="profile_div1">
-                <div class="profile_div1_image">
-                    <h2> Profile Image</h2>
+        <section class="home_page ">
+            <div class="performance_div1">
+                <div class="performance_quiz_name">
+                    <h2>Quiz name</h2>
                 </div>
-                <div class="profile_div1_rating">
-                    <h2>Rating</h2>
-                </div>
-            </div>
-            <div class="profile_div2">
-                <div class="profile_div2_name">
-                    <h2>Name, Surname</h2>
-                </div>
-                <div class="profile_div2_created">
-                    <h2>Created quizes</h2>
+                <div class="performance_quiz_text">
+                    <h2>Text</h2>
                 </div>
             </div>
-            <div class="profile_div3">
-                <div class="profile_div3_recently">
-                    <h2>Recently Done quizes</h2>
+            <div class="performance_div2">
+                <div class="performance_details">
+                    <h2>Performance details</h2>
                 </div>
-            </div>
-            <div class="profile_div4">
-                <div class="profile_div4_stats">
-                    <h2>Statistics</h2>
+                <div class="performance_quiz_answers">
+                    <h2>Answers</h2>
                 </div>
             </div>
         </section>
