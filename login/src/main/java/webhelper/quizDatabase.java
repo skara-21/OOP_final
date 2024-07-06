@@ -55,4 +55,8 @@ public class quizDatabase extends databaseManager {
     public ArrayList<String> getRecentTestTakers(int quizId) {
         return null;
     }
+
+    public quiz getQuizById(int quizId) {
+        return null;
+    }
 }

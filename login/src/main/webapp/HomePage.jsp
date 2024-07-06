@@ -9,7 +9,13 @@
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
     <style><%@include file="./styles/style.css"%></style>
-
+    <script>
+        // JavaScript function to handle click event on user_section
+        function goToProfile() {
+            // Redirect to HomePageServlet with action=profile
+            window.location.href = "HomePageServlet?action=profile";
+        }
+    </script>
 </head>
 
 <body>
@@ -33,7 +39,8 @@
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
             </div>
-            <a href="profile.jsp" class="user_section">
+            <!-- Calling goToProfile function on click -->
+            <a href="#" class="user_section" onclick="goToProfile()">
                 <i class="fa-regular fa-user"></i>
             </a>
 

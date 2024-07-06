@@ -42,6 +42,19 @@ public class HomePageServlet extends HttpServlet {
            //if search is null
         }
 
+        String action = request.getParameter("action");
+
+        if ("profile".equals(action)) {
+
+            request.getRequestDispatcher("profile.jsp").forward(request, response);
+            return;
+        }
+
+        if("viewQuiz".equals(action)) {
+            int quizId = Integer.parseInt(request.getParameter("quizId"));
+            request.setAttribute("quizId", quizId);
+            request.getRequestDispatcher("quiz.jsp").forward(request, response);
+        }
 
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 

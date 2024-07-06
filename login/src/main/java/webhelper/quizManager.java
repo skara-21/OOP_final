@@ -1,11 +1,6 @@
 package webhelper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import webhelper.quiz;
-import webhelper.user;
 
 public class quizManager {
 
