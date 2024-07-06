@@ -13,12 +13,14 @@ public class user {
     private ArrayList<quiz> quizzesWritten;
     private quizDatabase dbquiz;
     private friendsDatabase dbfriends;
+    private ArrayList<String> messages;
     public user(String username, int userId){
         this.username=username;
         this.userId=userId;
         quizzesCreated=new ArrayList<quiz>();
         friends=new ArrayList<user>();
         quizzesWritten=new ArrayList<quiz>();
+        messages = new ArrayList<String>();
     }
 
     public ArrayList<quiz> getWrittenQuizzes(){
@@ -72,6 +74,9 @@ public class user {
 
     public HashMap<Integer,Integer> getStatistics(){
         return dbquiz.getStatisticsdb(userId, true); //true anu vigeb useristvis
+    }
+    public void addMessage(String msg){
+        messages.add(msg);
     }
 
 }

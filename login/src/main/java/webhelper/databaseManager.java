@@ -58,8 +58,9 @@ public class databaseManager {
         while(rs2.next()){
             int userId=rs2.getInt(1);
             int friendId=rs2.getInt(2);
-            String message=rs2.getString(3); //amas mivxedot mere
+            String message=rs2.getString(3);
             userIduser.get(userId).addFriend(userIduser.get(friendId));
+            userIduser.get(userId).addMessage(message);
         }
         cn.close();
     }
