@@ -30,7 +30,7 @@ public class HomePageServlet extends HttpServlet {
 
         accountManager am = (accountManager) request.getServletContext().getAttribute("AM");
         String searchName = request.getParameter("searchName");
-        user searchResults = am.searchAccountsByName(searchName);
+        user searchResults = am.searchAccountByName(searchName);
         ArrayList<quiz> newsFeed = am.newsFeed();
 
         request.setAttribute("newsFeed", newsFeed);

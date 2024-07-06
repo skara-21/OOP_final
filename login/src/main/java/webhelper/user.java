@@ -11,6 +11,8 @@ public class user {
     private ArrayList<quiz> quizzesCreated;
     private ArrayList<user> friends;
     private ArrayList<quiz> quizzesWritten;
+    private quizDatabase dbquiz;
+    private friendsDatabase dbfriends;
     public user(String username, int userId){
         this.username=username;
         this.userId=userId;
@@ -20,27 +22,34 @@ public class user {
     }
 
     public ArrayList<quiz> getWrittenQuizzes(){
-        return dbquiz.getWrittenQuizzesById(userId);
-    }
-    public ArrayList<quiz> getCreatedQuizzes(){
-        return dbquiz.getCreatedQuizesById(userId);
+        return quizzesWritten;
     }
 
+    public ArrayList<quiz> getCreatedQuizzes(){
+        return quizzesCreated;
+    }
 
     public void addFriend(user newFriend){
         friends.add(newFriend);
-        dbfriends.add(newFriend.userId,userId);
-        return;
+        newFriend.addFriend(this);
     }
 
     public ArrayList<user> getFriendList(){
         return friends;
     }
 
+    public void addCreatedQuiz(quiz q){
+        quizzesCreated.add(q);
+    }
+
+    public void addWrittenQuiz(quiz q){
+        quizzesWritten.add(q);
+    }
+
     public void createQuiz(quiz newQuiz){
         quizzesCreated.add(newQuiz);
         newQuiz.createFile();
-        bdquiz.add(newQuiz);
+        dbquiz.add(newQuiz);
     }
 
     public int getlevel(){

@@ -2,6 +2,7 @@ package webhelper;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class quiz {
@@ -9,12 +10,16 @@ public class quiz {
     public String description;
     public user creator;
     private int quizId;
+    private Date creationDate;
 
-   public quiz(String quizName,String description,user creator,int quizId){
+    private quizDatabase dbquiz;
+
+   public quiz(String quizName,String description,user creator,int quizId,Date creationDate){
        this.quizId=quizId;
        this.quizName=quizName;
        this.description=description;
        this.creator=creator;
+       this.creationDate=creationDate;
    }
    public ArrayList<String> usersLastPerformances(int userId){
         return  dbquiz.getLastPerformances(userId,quizId);
@@ -32,4 +37,7 @@ public class quiz {
        return dbquiz.getStatisticsdb(quizId,false); //false anu vigeb qvizistvis
    }
 
+    public void createFile() {
+
+    }
 }

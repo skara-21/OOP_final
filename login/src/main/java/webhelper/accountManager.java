@@ -7,11 +7,10 @@ import java.util.Map;
 public class accountManager {
     private Map<String,String> accountPass;
     private user currUser;
+    private userDatabase db;
 
     public accountManager(){
-        accountPass=new HashMap<String,String>();
-        accountPass.put("Patrick","1234");
-        accountPass.put("Molly","FloPup");
+
     }
 
     private void createAcc(String name, int ID, String pass){

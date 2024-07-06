@@ -1,11 +1,10 @@
 USE university;
+
 DROP TABLE IF EXISTS user;
 CREATE TABLE user(
     userID INT PRIMARY KEY,
     userName CHAR(64) NOT NULL,
-    hashedPass CHAR(64) NOT NULL,
-    curLevel INT,
-    curXp INT
+    hashedPass CHAR(64) NOT NULL
 );
 
 DROP TABLE IF EXISTS quiz;
@@ -33,7 +32,7 @@ DROP TABLE IF EXISTS friends;
 CREATE TABLE friends(
     userID INT,
     friendID INT,
-    messageSent CHAR(128),
+    messageSent CHAR(128) NULL,
     FOREIGN KEY (userID) REFERENCES user(userID),
     FOREIGN KEY (friendID) REFERENCES user(userID)
 );
