@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class quiz {
     public String quizName;
@@ -11,10 +12,11 @@ public class quiz {
     public user creator;
     private int quizId;
     private Date creationDate;
-
+    private List<Question> questions;
     private quizDatabase dbquiz;
 
    public quiz(String quizName,String description,user creator,int quizId,Date creationDate){
+       this.questions = new ArrayList<Question>();
        this.quizId=quizId;
        this.quizName=quizName;
        this.description=description;
@@ -35,6 +37,10 @@ public class quiz {
 
    public HashMap<Integer,Integer> getStatistics(){
        return dbquiz.getStatisticsdb(quizId,false); //false anu vigeb qvizistvis
+   }
+
+   public void addQuestion(Question question) {
+       questions.add(question);
    }
 
     public void createFile() {
