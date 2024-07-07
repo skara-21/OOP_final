@@ -21,8 +21,6 @@ public class user {
         friends=new ArrayList<user>();
         quizzesWritten=new ArrayList<quiz>();
         messages = new ArrayList<String>();
-        dbquiz=new quizDatabase();
-        userdb=new userDatabase();
     }
 
     public ArrayList<quiz> getWrittenQuizzes(){
@@ -37,6 +35,7 @@ public class user {
         if(!friends.contains(newFriend)) {
             friends.add(newFriend);
             newFriend.addFriend(this);
+            userdb=new userDatabase();
             userdb.addFrienddb(userId, newFriend.userId);
         }
     }
@@ -56,6 +55,7 @@ public class user {
     public void createQuiz(quiz newQuiz){
         quizzesCreated.add(newQuiz);
         newQuiz.createFile();
+        dbquiz=new quizDatabase();
         dbquiz.add(newQuiz);
     }
 
@@ -73,14 +73,17 @@ public class user {
 
 
     public ArrayList<quiz> getFeedInfoCreated(){
+        dbquiz=new quizDatabase();
         return dbquiz.getLastCreated(userId);
     }
 
     public ArrayList<quiz> getFeedInfoTaken(){
+        dbquiz=new quizDatabase();
         return dbquiz.getLastTaken(userId);
     }
 
     public HashMap<Integer,Integer> getStatistics(){
+        dbquiz=new quizDatabase();
         return dbquiz.getStatisticsdb(userId, true); //true anu vigeb useristvis
     }
     public void addMessage(String msg){
