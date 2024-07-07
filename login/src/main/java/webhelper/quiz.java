@@ -13,7 +13,7 @@ public class quiz {
     public String quizName;
     public String description;
     public user creator;
-    private int quizId;
+    public int quizId;
     public Date creationDate;
     private ArrayList<Question> questions;
     private quizDatabase dbquiz;

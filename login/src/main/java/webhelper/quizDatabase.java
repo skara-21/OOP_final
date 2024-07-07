@@ -24,7 +24,7 @@ public class quizDatabase extends databaseManager {
         String query = "INSERT INTO quiz (quizName, creatorID, creationDate, orderedRandom) VALUES (?, ?, ?, ?)";
         try {
             Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
-            PreparedStatement ps=cn.prepareStatement(query);
+            PreparedStatement ps=cn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             ps.setString(1,newQuiz.quizName);
             ps.setInt(2,newQuiz.creator.userId);
             ps.setDate(3,dt);
@@ -32,6 +32,11 @@ public class quizDatabase extends databaseManager {
             int test=ps.executeUpdate();
             if(test<=0){
                 System.out.println("That didn't work");
+            }
+            try (ResultSet rs = ps.getGeneratedKeys()){
+                if(rs.next()){
+                    newQuiz.quizId=rs.getInt(1);
+                }
             }
             cn.close();
         }catch(Exception e){
@@ -211,6 +216,53 @@ public class quizDatabase extends databaseManager {
             cn.close();
         }catch (Exception E){
             E.printStackTrace();
+        }
+        return ans;
+    }
+
+    public ArrayList<quiz> getPopularQuizzesdb() {
+        ArrayList<quiz> ans=new ArrayList<quiz>();
+        String query="SELECT q.quizID, q.quizName, COUNT(qu.quizID) AS takenCount" +
+                "FROM quiz q" +
+                "JOIN quizUser qu ON q.quizID = qu.quizID" +
+                "GROUP BY q.quizID, q.quizName" +
+                "ORDER BY takenCount DESC" +
+                "ORDER BY takenCount DESC" +
+                "LIMIT 3;";
+        try{
+            Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(query);
+            while(rs.next()){
+                int id=rs.getInt("quizID");
+                ans.add(quizIdquiz.get(id));
+            }
+            rs.close();
+            cn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return ans;
+    }
+
+    public ArrayList<quiz> getRecentQuizzesdb() {
+        ArrayList<quiz> ans=new ArrayList<quiz>();
+        String query="SELECT quizID " +
+                "FROM quiz" +
+                "ORDER BY creationDate DESC" +
+                "LIMIT 3;";
+        try{
+            Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(query);
+            while(rs.next()){
+                int id=rs.getInt("quizID");
+                ans.add(quizIdquiz.get(id));
+            }
+            rs.close();
+            cn.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return ans;
     }
