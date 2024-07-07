@@ -32,7 +32,7 @@
             </a>
             <div class="search">
                 <label for="searchName" class="search_icon"><i class="fas fa-search"></i></label>
-                <input type="text" id="name" name="searchName" required minlength="4" maxlength="64" size="20" />
+                <input type="text" id="searchName" name="searchName" required minlength="4" maxlength="64" size="20" />
 
             </div>
             <div class="friends_section">
