@@ -9,6 +9,7 @@ public class quizManager {
     private ArrayList<quiz> userCreatedQuizzes;
     private ArrayList<quiz> userWrittenQuizzes;
     private user currentUser;
+    private quizDatabase dbquiz;
 
     public quizManager(String username, int id){
         currentUser = new user(username, id);
@@ -19,8 +20,6 @@ public class quizManager {
 
         userCreatedQuizzes.addAll(currentUser.getCreatedQuizzes());
         userWrittenQuizzes.addAll(currentUser.getWrittenQuizzes());
-
-
     }
 
     public ArrayList<quiz> getPopularQuizzes() {
@@ -40,6 +39,15 @@ public class quizManager {
     public ArrayList<quiz> getUserWrittenQuizzes() {
         return userWrittenQuizzes;
     }
+
+    public ArrayList<quiz> createdFeed() {
+        return currentUser.getFeedInfoCreated();
+    }
+    public ArrayList<quiz> takenFeed() {
+        return currentUser.getFeedInfoTaken();
+    }
+
+
 
 
 

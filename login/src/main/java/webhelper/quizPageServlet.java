@@ -23,10 +23,13 @@ public class quizPageServlet extends HttpServlet {
         int quizId = Integer.parseInt(request.getParameter("quizId"));
         quiz quiz = quizDatabase.getQuizById(quizId);
 
+        ServletContext context = request.getServletContext();
+        user curUser = (user) context.getAttribute("curUser");
+
         request.setAttribute("quiz_name", quiz.quizName);
         request.setAttribute("quiz_id", quizId);
         request.setAttribute("quiz_text", quiz.description);
-        request.setAttribute("quiz_last", quizDatabase.getLastPerformances( curUser.userId,quizId));
+        request.setAttribute("quiz_last", quizDatabase.getLastPerformances(curUser.userId,quizId));
         request.setAttribute("quiz_highest", quizDatabase.getHighestPerformers(quizId, true));
         request.setAttribute("quiz_recent", quizDatabase.getRecentTestTakers(quizId));
         request.setAttribute("quiz_stats", quizDatabase.getStatisticsdb(curUser.userId, true));
@@ -34,9 +37,11 @@ public class quizPageServlet extends HttpServlet {
         String action = request.getParameter("action");
         switch (action) {
             case "practice":
-                request.getRequestDispatcher("practice.jsp").forward(request, response);
+                request.setAttribute("Mode", "practice");
+                request.getRequestDispatcher("start.jsp").forward(request, response);
                 break;
             case "start":
+                request.setAttribute("Mode", "normal");
                 request.getRequestDispatcher("start.jsp").forward(request, response);
                 break;
             default:

@@ -2,6 +2,7 @@ package webhelper;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 
 @WebListener
 public class initializer implements ServletContextListener {
@@ -13,15 +14,24 @@ public class initializer implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent e){
         accountManager db=new accountManager();
+        databaseManager dm=new databaseManager();
+        userDatabase udb = new userDatabase();
+
         ServletContext tmp=e.getServletContext();
         tmp.setAttribute("MY_DB",db);
 
+        String currentUsername = (String) tmp.getAttribute("currentUsername");
+        String currentPassword = (String) tmp.getAttribute("currentPassword");
+        udb.addUser(currentUsername,currentPassword);
+        tmp.setAttribute("curUser", db.getCurrUser());
+
         try {
-            quizDatabase = new quizDatabase(); // Initialize your quiz database
+            quizDatabase = new quizDatabase(); // Initializing quiz database
             tmp.setAttribute("QUIZ_DATABASE", quizDatabase);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+
 
 
     }

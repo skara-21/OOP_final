@@ -29,11 +29,14 @@ public class HomePageServlet extends HttpServlet {
         request.setAttribute("userWrittenQuizzes", userWrittenQuizzes);
 
         accountManager am = (accountManager) request.getServletContext().getAttribute("AM");
+
+
+        request.setAttribute("getFeedInfoCreated", qm.createdFeed());
+        request.setAttribute("getFeedInfoTaken", qm.takenFeed());
+
+
         String searchName = request.getParameter("searchName");
         user searchResults = am.searchAccountByName(searchName);
-        ArrayList<quiz> newsFeed = am.newsFeed();
-
-        request.setAttribute("newsFeed", newsFeed);
 
         if (searchResults != null) {
             request.setAttribute("searchResults", searchResults);
@@ -45,7 +48,6 @@ public class HomePageServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("profile".equals(action)) {
-
             request.getRequestDispatcher("profile.jsp").forward(request, response);
             return;
         }

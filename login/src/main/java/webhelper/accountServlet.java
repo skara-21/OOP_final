@@ -13,6 +13,11 @@ public class accountServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         accountManager db=(accountManager) request.getServletContext().getAttribute("MY_DB");
+
+        ServletContext context = request.getServletContext();
+        context.setAttribute("currentUsername", request.getParameter("username"));
+        context.setAttribute("currentPassword", request.getParameter("password"));
+
         if(!db.accountExists(request.getParameter("username"))){
             db.createAcc(request.getParameter("username"),request.getParameter("pass"));
             RequestDispatcher tmp=request.getRequestDispatcher("welcome.jsp");

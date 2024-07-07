@@ -20,6 +20,9 @@ public class accountManager {
         }
         db.addUser(name, pass);
     }
+    public user getCurrUser(){
+        return currUser;
+    }
     public ArrayList<quiz> newsFeedCreated(){
         return currUser.getFeedInfoCreated();
     }
