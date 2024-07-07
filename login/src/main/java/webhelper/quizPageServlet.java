@@ -26,10 +26,10 @@ public class quizPageServlet extends HttpServlet {
         request.setAttribute("quiz_name", quiz.quizName);
         request.setAttribute("quiz_id", quizId);
         request.setAttribute("quiz_text", quiz.description);
-        request.setAttribute("quiz_last", quizDatabase.getLastPerformances(quizId, user));
+        request.setAttribute("quiz_last", quizDatabase.getLastPerformances( curUser.userId,quizId));
         request.setAttribute("quiz_highest", quizDatabase.getHighestPerformers(quizId, true));
         request.setAttribute("quiz_recent", quizDatabase.getRecentTestTakers(quizId));
-        request.setAttribute("quiz_stats", quizDatabase.getStatisticsdb(userId, true));
+        request.setAttribute("quiz_stats", quizDatabase.getStatisticsdb(curUser.userId, true));
 
         String action = request.getParameter("action");
         switch (action) {

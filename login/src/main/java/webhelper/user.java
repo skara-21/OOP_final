@@ -7,12 +7,12 @@ import java.util.HashMap;
 public class user {
     private static int XPINLVL=10;
     public String username;
-    private int userId;
+    public int userId;
     private ArrayList<quiz> quizzesCreated;
     private ArrayList<user> friends;
     private ArrayList<quiz> quizzesWritten;
     private quizDatabase dbquiz;
-    private friendsDatabase dbfriends;
+    private userDatabase userdb;
     private ArrayList<String> messages;
     public user(String username, int userId){
         this.username=username;
@@ -21,6 +21,8 @@ public class user {
         friends=new ArrayList<user>();
         quizzesWritten=new ArrayList<quiz>();
         messages = new ArrayList<String>();
+        dbquiz=new quizDatabase();
+        userdb=new userDatabase();
     }
 
     public ArrayList<quiz> getWrittenQuizzes(){
@@ -32,8 +34,11 @@ public class user {
     }
 
     public void addFriend(user newFriend){
-        friends.add(newFriend);
-        newFriend.addFriend(this);
+        if(!friends.contains(newFriend)) {
+            friends.add(newFriend);
+            newFriend.addFriend(this);
+            userdb.addFrienddb(userId, newFriend.userId);
+        }
     }
 
     public ArrayList<user> getFriendList(){
@@ -66,10 +71,13 @@ public class user {
         return (tot)%XPINLVL;
     }
 
-    //qvizis baza join qvizi+user quiz_id=quiz_id
 
-    public ArrayList<quiz> getFeedInfo(){
-        return dbquiz.getFeedInfodb(friends);
+    public ArrayList<quiz> getFeedInfoCreated(){
+        return dbquiz.getLastCreated(userId);
+    }
+
+    public ArrayList<quiz> getFeedInfoTaken(){
+        return dbquiz.getLastTaken(userId);
     }
 
     public HashMap<Integer,Integer> getStatistics(){

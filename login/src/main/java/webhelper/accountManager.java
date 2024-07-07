@@ -18,11 +18,12 @@ public class accountManager {
         if(accountPass.containsKey(name)){
             return;
         }
-        db.addUser(name, ID, pass);
+        db.addUser(name, pass);
     }
-    public ArrayList<quiz> newsFeed(){
-        return currUser.getFeedInfo();
+    public ArrayList<quiz> newsFeedCreated(){
+        return currUser.getFeedInfoCreated();
     }
+    public ArrayList<quiz> newsFeedTaken(){return currUser.getFeedInfoTaken(); }
 
     public boolean accountExists(String name){
         return accountPass.containsKey(name);

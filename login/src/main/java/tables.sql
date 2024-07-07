@@ -2,18 +2,18 @@ USE university;
 
 DROP TABLE IF EXISTS user;
 CREATE TABLE user(
-    userID INT PRIMARY KEY,
+    userID INT AUTO_INCREMENT PRIMARY KEY,
     userName CHAR(64) NOT NULL,
     hashedPass CHAR(64) NOT NULL
 );
 
 DROP TABLE IF EXISTS quiz;
 CREATE TABLE quiz(
-    quizID INT PRIMARY KEY,
+    quizID INT AUTO_INCREMENT PRIMARY KEY,
     quizName CHAR(64) NOT NULL,
     creatorID INT,
     creationDate DATE, 
-    relativeAddress CHAR(128),
+    orderedRandom BOOL,
     FOREIGN KEY (creatorID) REFERENCES user(userID)
 );
 
