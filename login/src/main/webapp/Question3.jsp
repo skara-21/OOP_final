@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Summarry</title>
+    <title>Question</title>
     <link rel="shortcut icon" href="images/RacxaIqneba.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
@@ -40,11 +40,22 @@
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <div class="create_quiz create_question">
+        <div class="create_quiz">
             <div class="question_info">
                 <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required minlength="10" maxlength="64" size="20" />
-                <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer1" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer2" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer3" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer4" required minlength="0" maxlength="64" size="20" />
             </div>
+            <label class="answers_label" for="answers">Choose Correct answer</label>
+            <select name="answers" id="answers" value="Choose Answer" required>
+                <option value="none" class="types" selected disabled hidden>Select an Answer</option>
+                <option value="1" class="types">1</option>
+                <option value="2" class="types">2</option>
+                <option value="3" class="types">3</option>
+                <option value="4" class="types">4</option>
+            </select>
             <div class="quest_buts">
                 <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
                 <button class="finish_but"><a href="index.html" class="finish">Finish</a></button>
@@ -54,7 +65,6 @@
     </section>
 
 </div>
-<script src="main.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question</title>
+    <title>Quiz</title>
     <link rel="shortcut icon" href="images/RacxaIqneba.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
@@ -40,20 +40,11 @@
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <div class="create_quiz">
-            <div class="question_info">
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required
-                       minlength="10" maxlength="64" size="20" />
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Image link" required
-                       minlength="10" maxlength="10000" size="20" />
+        <div class="create_quiz start_quiz">
+            <div class="quiz_info">
+                <h2 class="quiz_title">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
             </div>
-            <input type="text" class="question_answer quest2_answer" name="question_answer"
-                   placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
-            <div class="quest_buts">
-                <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="index.html" class="finish">Finish</a></button>
-            </div>
-
+            <button class="next_but"><a href="Questions.html" class="quest_link">Start</a></button>
         </div>
     </section>
 

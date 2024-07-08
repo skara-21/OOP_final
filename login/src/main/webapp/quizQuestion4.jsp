@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,6 @@
     <header class="header_home">
         <i class="fa-solid fa-bars"></i>
         <i class="fa-solid fa-xmark"></i>
-
 
         <a href="index.html" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
@@ -42,22 +40,12 @@
     <section class="home_page">
         <div class="create_quiz">
             <div class="question_info">
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required
-                       minlength="10" maxlength="64" size="20" />
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Image link" required
-                       minlength="10" maxlength="10000" size="20" />
+                <h2 class="quiz_title question1">Libero, voluptate nesciunt quisquam animi omnis eum dicta veniam fugit minima eveniet tenetur explicabo minus, quos obcaecati dolorem nam nulla qui incidunt?</h2>
+                <img src="https://t3.ftcdn.net/jpg/02/95/44/22/360_F_295442295_OXsXOmLmqBUfZreTnGo9PREuAPSLQhff.jpg" alt="horse">
+                <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
             </div>
-            <input type="text" class="question_answer quest2_answer" name="question_answer"
-                   placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
-            <div class="quest_buts">
-                <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="index.html" class="finish">Finish</a></button>
-            </div>
-
+            <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
         </div>
     </section>
-
-</div>
-</body>
 
 </html>
