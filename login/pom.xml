@@ -23,11 +23,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-<<<<<<< HEAD
       <version>8.0.30</version>
-=======
-      <version>8.0.32</version>
->>>>>>> ae40524 (Creating quiz erb design)
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -58,15 +54,6 @@
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>
-<<<<<<< HEAD
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.23</version>
-    </dependency>
-=======
-
->>>>>>> ae40524 (Creating quiz erb design)
   </dependencies>
 
   <build>
