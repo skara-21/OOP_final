@@ -122,7 +122,6 @@
                 <label for="pass">Password:</label><br>
                 <input type="password" id="pass" name="pass"/><br>
             </div>
-
             <input type="submit" value="Login">
         </form>
     </div>
