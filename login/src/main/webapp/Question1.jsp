@@ -46,8 +46,8 @@
                 <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
             </div>
             <div class="quest_buts">
-                <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="index.html" class="finish">Finish</a></button>
+                <button class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
+                <button class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
             </div>
 
         </div>

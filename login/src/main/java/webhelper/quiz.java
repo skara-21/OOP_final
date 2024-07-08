@@ -15,7 +15,7 @@ public class quiz {
     public user creator;
     public int quizId;
     public Date creationDate;
-    private ArrayList<Question> questions;
+    public ArrayList<Question> questions;
     private quizDatabase dbquiz;
     public boolean ordRand;
 

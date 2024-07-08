@@ -46,7 +46,6 @@ public class HomePageServlet extends HttpServlet {
            //if search is null
         }
 
-        request.getRequestDispatcher("profile.jsp").forward(request, response);
 
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 
