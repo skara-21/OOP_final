@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create Account</title>
+    <title>Homepage</title>
     <style>
         body {
             display: flex;
@@ -49,10 +49,10 @@
 </head>
 <body>
 <div class="container">
-    <h1>The Name <%=request.getParameter("username")%> is Already In Use</h1>
+    <h1>Welcome to Homework 5</h1>
     <div class="login-box">
-        <p>Please enter another name and password</p>
-        <form action="accountServlet" method="post">
+        <p> Please log in</p>
+        <form action="loginServlet" method="post">
             <label for="username">User Name:</label><br>
             <input type="text" id="username" name="username"/><br>
             <label for="pass">Password:</label><br>
@@ -60,6 +60,7 @@
             <input type="submit" value="Login">
         </form>
     </div>
+    <p><a href="newacc.jsp">Create New Account</a></p>
 </div>
 </body>
 </html>

@@ -9,13 +9,7 @@
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
     <style><%@include file="./styles/style.css"%></style>
-    <script>
-        // JavaScript function to handle click event on user_section
-        function goToProfile() {
-            // Redirect to HomePageServlet with action=profile
-            window.location.href = "HomePageServlet?action=profile";
-        }
-    </script>
+
 </head>
 
 <body>
@@ -30,17 +24,20 @@
             <a href="HomePage.jsp" class="header_logo_box">
                 <img class="header_logo" src="images/RacxaIqneba.png">
             </a>
-            <div class="search">
-                <label for="searchName" class="search_icon"><i class="fas fa-search"></i></label>
-                <input type="text" id="searchName" name="searchName" required minlength="4" maxlength="64" size="20" />
+            <form action="HomePageServlet" method="post">
+                <div class="search">
+                    <label for="searchName" class="search_icon"><i class="fas fa-search"></i></label>
+                    <input type="text" id="searchName" name="searchName" required minlength="4" maxlength="64" size="20" />
+                    <button type="submit">Search</button>
+                </div>
+            </form>
 
-            </div>
             <div class="friends_section">
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
             </div>
-            <!-- Calling goToProfile function on click -->
-            <a href="#" class="user_section" onclick="goToProfile()">
+
+            <a href="profile.jsp" class="user_section">
                 <i class="fa-regular fa-user"></i>
             </a>
 

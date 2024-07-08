@@ -19,11 +19,8 @@ public class initializer implements ServletContextListener {
 
         ServletContext tmp=e.getServletContext();
         tmp.setAttribute("MY_DB",db);
-
-        String currentUsername = (String) tmp.getAttribute("currentUsername");
-        String currentPassword = (String) tmp.getAttribute("currentPassword");
-        udb.addUser(currentUsername,currentPassword);
-        tmp.setAttribute("curUser", db.getCurrUser());
+        tmp.setAttribute("MY_DB2",udb);
+        tmp.setAttribute("Dm",dm);
 
         try {
             quizDatabase = new quizDatabase(); // Initializing quiz database

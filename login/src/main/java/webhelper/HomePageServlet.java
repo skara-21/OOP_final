@@ -18,6 +18,7 @@ public class HomePageServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         quizManager qm=(quizManager) request.getServletContext().getAttribute("QUIZ");
+        System.out.println("hello");
         ArrayList<quiz> popularQuizzes = qm.getPopularQuizzes();
         ArrayList<quiz> recentlyCreatedQuizzes = qm.getRecentlyCreatedQuizzes();
         ArrayList<quiz> userCreatedQuizzes = qm.getUserCreatedQuizzes();
@@ -33,7 +34,7 @@ public class HomePageServlet extends HttpServlet {
 
         request.setAttribute("getFeedInfoCreated", qm.createdFeed());
         request.setAttribute("getFeedInfoTaken", qm.takenFeed());
-
+        request.setAttribute("username", am.getCurrUser().username);
 
         String searchName = request.getParameter("searchName");
         user searchResults = am.searchAccountByName(searchName);
@@ -45,18 +46,7 @@ public class HomePageServlet extends HttpServlet {
            //if search is null
         }
 
-        String action = request.getParameter("action");
-
-        if ("profile".equals(action)) {
-            request.getRequestDispatcher("profile.jsp").forward(request, response);
-            return;
-        }
-
-        if("viewQuiz".equals(action)) {
-            int quizId = Integer.parseInt(request.getParameter("quizId"));
-            request.setAttribute("quizId", quizId);
-            request.getRequestDispatcher("quiz.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("profile.jsp").forward(request, response);
 
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 

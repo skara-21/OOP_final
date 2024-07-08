@@ -8,9 +8,10 @@ public class userDatabase extends databaseManager{
     public void addUser(String name, String pass) {
         String hashed=hashPassword(pass);
         try {
+            System.out.println(pass);
             Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
             Statement st=cn.createStatement();
-            String query="INSERT INTO user(userName,hashedPass) VALUES ("+name+", "+hashed+")";
+            String query="INSERT INTO user(userName,hashedPass) VALUES ('"+name+"' , '"+hashed+"')";
             int inserted=st.executeUpdate(query);
             if(inserted<=0){
                 System.out.println("That didn't work");
@@ -63,5 +64,30 @@ public class userDatabase extends databaseManager{
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public boolean isCorrectPass(user usr, String pass) {
+        String hashedPass=hashPassword(pass);
+        try {
+            Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
+            Statement st = cn.createStatement();
+            String query="SELECT hashedPass FROM user WHERE userID="+usr.userId;
+            ResultSet rs=st.executeQuery(query);
+            if (rs.next()){
+                String actual=rs.getString("hashedPass");
+                rs.close();
+                cn.close();
+                if(actual.equals(hashedPass)){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

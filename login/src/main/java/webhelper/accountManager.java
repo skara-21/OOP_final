@@ -10,10 +10,16 @@ public class accountManager {
     private userDatabase db;
 
     public accountManager(){
-
+            this.accountPass = new HashMap<>();
+            db = new userDatabase();
     }
 
-    private void createAcc(String name, int ID, String pass){
+    public void setAcc(String username){
+        currUser = db.searchAccontByName(username);
+    }
+
+
+    public void createAcc(String name, int ID, String pass){
         currUser = new user(name, ID);
         if(accountPass.containsKey(name)){
             return;
@@ -29,10 +35,21 @@ public class accountManager {
     public ArrayList<quiz> newsFeedTaken(){return currUser.getFeedInfoTaken(); }
 
     public boolean accountExists(String name){
-        return accountPass.containsKey(name);
+        user usr=db.searchAccontByName(name);
+        if(usr!=null){
+            return true;
+        }
+
+        return false;
     }
     public boolean correctCredentials(String name,String Pass){
-        return accountPass.containsKey(name) && (accountPass.get(name).equals(Pass));
+        user usr=db.searchAccontByName(name);
+
+        if(usr!=null){
+            if(db.isCorrectPass(usr,Pass)) return true;
+            else return false;
+        }
+        return false;
     }
     public void createAcc(String name,String Pass){
         accountPass.put(name,Pass);

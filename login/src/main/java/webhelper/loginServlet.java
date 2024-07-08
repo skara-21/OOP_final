@@ -14,13 +14,12 @@ public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         accountManager db=(accountManager) request.getServletContext().getAttribute("MY_DB");
         if(db.correctCredentials(request.getParameter("username"),request.getParameter("pass"))){
-            RequestDispatcher tmp=request.getRequestDispatcher("welcome.jsp");
+
+            db.setAcc(request.getParameter("username"));
+            RequestDispatcher tmp=request.getRequestDispatcher("HomePage.jsp");
             tmp.forward(request,response);
 
-
-
-        }
-        else{
+        }else{
             RequestDispatcher tmp=request.getRequestDispatcher("tryAgain.jsp");
             tmp.forward(request,response);
         }

@@ -33,7 +33,7 @@
 <body>
 <div class="container">
     <h1>Welcome <%= request.getParameter("username") %></h1>
-    <p><a href="homepage.jsp">Log Out</a></p>
+    <p><a href="HomePage.jsp">Log Out</a></p>
 </div>
 </body>
 </html>
