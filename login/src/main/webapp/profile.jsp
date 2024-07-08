@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="shortcut icon" href="images/Bulb.png" type="image/x-icon">
+    <title>Profile Page</title>
+    <link rel="shortcut icon" href="images/RacxaIqneba.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
     <style><%@include file="./styles/style.css"%></style>
-
 </head>
 
 <body>
@@ -21,43 +20,49 @@
         <i class="fa-solid fa-xmark"></i>
 
 
-        <a href="homePage.html" class="header_logo_box">
+        <a href="index.html" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
         </a>
-        <div class="search">
-            <label for="name" class="search_icon"><i class="fas fa-search"></i></label>
-            <input type="text" id="name" name="name" required minlength="4" maxlength="64" size="20" />
-
-        </div>
         <div class="friends_section">
             <i class="fas fa-user-friends"></i>
             <i class="fa-solid fa-message"></i>
         </div>
-        <a href="profile.html" class="user_section">
-            <i class="fa-regular fa-user"></i>
-        </a>
-
+        <div class="profile_sect">
+            <a href="contact.html" class="user_section">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="Entry.html" class="logout" title="Exit">
+                <i class="fa-solid fa-door-open"></i>
+            </a>
+        </div>
     </header>
 
     <!-- SECTION 1 -->
-    <section class="home_page">
-        <div class="quizes">
-            <div class="popular_quizes">
-                <h2>popular quizes</h2>
+    <section class="home_page profile_page">
+        <div class="profile_div1">
+            <div class="profile_div1_image">
+                <h2> Profile Image</h2>
             </div>
-            <div class="recently_created_quizes">
-                <h2>recently created quizes</h2>
+            <div class="profile_div1_rating">
+                <h2>Rating</h2>
             </div>
         </div>
-        <div class="news">
-            <h2 class="news_feed">News Feed</h2>
-        </div>
-        <div class="my_quizes">
-            <div class="my_written_quizes">
-                <h2>recently created quizes</h2>
+        <div class="profile_div2">
+            <div class="profile_div2_name">
+                <h2>Name, Surname</h2>
             </div>
-            <div class="my_created_quizes">
-                <h2>recently created quizes</h2>
+            <div class="profile_div2_created">
+                <h2>Created quizes</h2>
+            </div>
+        </div>
+        <div class="profile_div3">
+            <div class="profile_div3_recently">
+                <h2>Recently Done quizes</h2>
+            </div>
+        </div>
+        <div class="profile_div4">
+            <div class="profile_div4_stats">
+                <h2>Statistics</h2>
             </div>
         </div>
     </section>

@@ -47,5 +47,6 @@
             <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
         </div>
     </section>
-
+</div>
+</body>
 </html>
