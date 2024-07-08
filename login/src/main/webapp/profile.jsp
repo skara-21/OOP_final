@@ -45,7 +45,11 @@
     <section class="home_page profile_page">
         <div class="profile_div1">
             <div class="profile_div1_image">
-                <h2> Profile Image</h2>
+                <h2 class="profile_image"> Profile Image</h2>
+                <div class="addToProfile">
+                    <input type="text" placeholder="Enter URL" size="25">
+                    <button class="add_photo" type="submit" class>Add photo</button>
+                </div>
             </div>
             <div class="profile_div1_rating">
                 <h2>Rating</h2>
@@ -55,10 +59,7 @@
 
                 <div class="profile_div2_name">
                     <h2><%= request.getAttribute("username1")%></h2>
-
-
                 </div>
-
                 <div class="profile_div2_created">
                     <h2>Created quizes</h2>
                 </div>
