@@ -107,6 +107,16 @@
     color: #DCCBED;
 }
 
+.user_section {
+    border: none;
+    background: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 .fa-user:hover {
     background-color: #F89EC4;
     color: #FAEDFF;

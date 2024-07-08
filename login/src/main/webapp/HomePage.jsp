@@ -38,11 +38,11 @@
                 <i class="fa-solid fa-message"></i>
             </div>
             <form action="profileServlet" method="post">
-                <a href="profile.jsp"><input type="submit"></a>
+                <button type="submit" class="user_section">
+                    <i class="fa-regular fa-user"></i>
+                </button>
             </form>
-            <a href="profile.jsp" class="user_section">
-                <i class="fa-regular fa-user"></i>
-            </a>
+
 
         </header>
 
