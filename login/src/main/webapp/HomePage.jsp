@@ -37,7 +37,9 @@
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
             </div>
-
+            <form action="profileServlet" method="post">
+                <a href="profile.jsp"><input type="submit"></a>
+            </form>
             <a href="profile.jsp" class="user_section">
                 <i class="fa-regular fa-user"></i>
             </a>

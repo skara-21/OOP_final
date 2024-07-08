@@ -42,11 +42,14 @@
     <!-- SECTION 1 -->
     <section class="home_page">
         <div class="create_quiz">
-            <div class="quiz_info">
-                <input type="text" id="quiz_name" name="quiz_name" placeholder="Enter quiz name" required minlength="10" maxlength="64" size="20" />
-                <input type="text" id="quiz_desc" name="quiz_desc" placeholder="Enter quiz description" required minlength="10" maxlength="64" size="20" />
-            </div>
-            <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
+            <form action="quizCreationServlet" method="post">
+                <div class="quiz_info">
+                    <input type="text" id="quiz_name" name="quizName" placeholder="Enter quiz name" required minlength="10" maxlength="64" size="20" />
+                    <input type="text" id="quiz_desc" name="quizDescription" placeholder="Enter quiz description" required minlength="10" maxlength="64" size="20" />
+                    <input type="submit" placeholder="submit">
+                </div>
+            </form>
+
         </div>
     </section>
 

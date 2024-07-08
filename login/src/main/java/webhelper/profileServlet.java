@@ -32,8 +32,6 @@ public class profileServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("profile.jsp");
         dispatcher.forward(request, response);
 
-        doGet(request, response);
-
     }
 }
 
