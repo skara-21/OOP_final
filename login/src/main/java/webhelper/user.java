@@ -49,6 +49,10 @@ public class user {
     }
 
     public void addWrittenQuiz(quiz q){
+        int score=0;//PLACEHOLDER
+        float timeUsed=0;//PLACEHOLDER
+        userDatabase ud=new userDatabase();
+        ud.addWrittenQuizdb(userId,q.quizId,score,timeUsed);
         quizzesWritten.add(q);
     }
 

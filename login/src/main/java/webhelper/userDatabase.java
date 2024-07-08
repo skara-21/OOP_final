@@ -8,7 +8,6 @@ public class userDatabase extends databaseManager{
     public void addUser(String name, String pass) {
         String hashed=hashPassword(pass);
         try {
-            System.out.println(pass);
             Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
             Statement st=cn.createStatement();
             String query="INSERT INTO user(userName,hashedPass) VALUES ('"+name+"' , '"+hashed+"')";
@@ -56,7 +55,7 @@ public class userDatabase extends databaseManager{
         try {
             Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
             Statement st = cn.createStatement();
-            String query="INSERT INTO friends (userID,friendID) VALUES ("+userId+", "+friendId+")";
+            String query="INSERT INTO friends (userID,friendID) VALUES ('"+userId+"', '"+friendId+"')";
             int tot=st.executeUpdate(query);
             if(tot<=0){
                 System.out.println("That didn't work");
@@ -66,6 +65,26 @@ public class userDatabase extends databaseManager{
         }
     }
 
+    public void addWrittenQuizdb(int userID,int quizID,int score,float timeUsed){
+        try {
+            Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
+            java.sql.Date dt=new java.sql.Date(quizIdquiz.get(quizID).creationDate.getTime());
+            String query="INSERT INTO quizUser (userID, score, timeUsed, quizID, dateTaken) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement ps=cn.prepareStatement(query);
+            ps.setInt(1, userID);
+            ps.setInt(2, score);
+            ps.setFloat(3, timeUsed);
+            ps.setInt(4, quizID);
+            ps.setDate(5, dt);
+            int tot=ps.executeUpdate(query);
+            if(tot<=0){
+                System.out.println("quiz wasn't inserted in the database");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public boolean isCorrectPass(user usr, String pass) {
         String hashedPass=hashPassword(pass);
         try {
