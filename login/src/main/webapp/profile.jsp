@@ -1,3 +1,4 @@
+<%@ page import="webhelper.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,7 @@
         <i class="fa-solid fa-xmark"></i>
 
 
-        <a href="index.html" class="header_logo_box">
+        <a href="HomePage.jsp" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
         </a>
         <div class="friends_section">
@@ -28,10 +29,10 @@
             <i class="fa-solid fa-message"></i>
         </div>
         <div class="profile_sect">
-            <a href="contact.html" class="user_section">
+            <a href="profile.jsp" class="user_section">
                 <i class="fa-regular fa-user"></i>
             </a>
-            <a href="Entry.html" class="logout" title="Exit">
+            <a href="LoginPage.jsp" class="logout" title="Exit">
                 <i class="fa-solid fa-door-open"></i>
             </a>
         </div>
@@ -48,13 +49,16 @@
             </div>
         </div>
         <div class="profile_div2">
-            <div class="profile_div2_name">
-                <h2>Name, Surname</h2>
-            </div>
-            <div class="profile_div2_created">
-                <h2>Created quizes</h2>
-            </div>
+                <div class="profile_div2_name">
+                    <h1><%=request.getAttribute("username1")%></h1>
+
+
+                </div>
+                <div class="profile_div2_created">
+                    <h2>Created quizes</h2>
+                </div>
         </div>
+
         <div class="profile_div3">
             <div class="profile_div3_recently">
                 <h2>Recently Done quizes</h2>

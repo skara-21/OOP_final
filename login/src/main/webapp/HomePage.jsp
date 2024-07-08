@@ -1,3 +1,4 @@
+<%@ page import="webhelper.quiz" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,10 +48,44 @@
         <section class="home_page">
             <div class="quizes">
                 <div class="popular_quizes">
-                    <h2>popular quizes</h2>
+
+                    <%
+                        quiz[] quizzes = (quiz[]) request.getAttribute("popularQuizzes");
+                        if (quizzes != null) {
+                            for (quiz quiz : quizzes) {
+                    %>
+                    <p>
+                        <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        Author: <%= quiz.creator %>
+                    </p>
+                    <%
+                            }
+                        }else{
+                    %>
+                    <h2>Not popular quizes</h2>
+                    <%
+                        }
+                    %>
                 </div>
                 <div class="recently_created_quizes">
-                    <h2>recently created quizes</h2>
+
+                    <%
+                        quiz[] quizzes1 = (quiz[]) request.getAttribute("recentlyCreatedQuizzes");
+                        if (quizzes != null) {
+                            for (quiz quiz : quizzes) {
+                    %>
+                    <p>
+                        <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        Author: <%= quiz.creator %>
+                    </p>
+                    <%
+                        }
+                    }else{
+                    %>
+                    <h2>Not recently created quizes</h2>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
             <div class="news">
@@ -58,10 +93,44 @@
             </div>
             <div class="my_quizes">
                 <div class="my_written_quizes">
-                    <h2>recently created quizes</h2>
+
+                    <%
+                        quiz[] quizzes2 = (quiz[]) request.getAttribute("userCreatedQuizzes");
+                        if (quizzes != null) {
+                            for (quiz quiz : quizzes) {
+                    %>
+                    <p>
+                        <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        Author: <%= quiz.creator %>
+                    </p>
+                    <%
+                        }
+                    }else{
+                    %>
+                    <h2>Not written quizzes to show </h2>
+                    <%
+                        }
+                    %>
                 </div>
                 <div class="my_created_quizes">
-                    <h2>recently created quizes</h2>
+
+                    <%
+                        quiz[] quizzes3 = (quiz[]) request.getAttribute("userWrittenQuizzes");
+                        if (quizzes != null) {
+                            for (quiz quiz : quizzes) {
+                    %>
+                    <p>
+                        <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        Author: <%= quiz.creator %>
+                    </p>
+                    <%
+                        }
+                    }else{
+                    %>
+                    <h2>Not any quizes to show </h2>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </section>

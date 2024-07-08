@@ -14,6 +14,7 @@ public class accountServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         accountManager db=(accountManager) request.getServletContext().getAttribute("MY_DB");
 
 
@@ -23,8 +24,6 @@ public class accountServlet extends HttpServlet {
             String username = (String) request.getParameter("username");
             String pass = (String) request.getParameter("pass");
 
-            db.createAcc(username, pass);
-            udb.addUser(username, pass);
 
             request.setAttribute("username", username);
             RequestDispatcher tmp=request.getRequestDispatcher("HomePage.jsp");

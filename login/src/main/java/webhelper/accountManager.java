@@ -19,13 +19,11 @@ public class accountManager {
     }
 
 
-    public void createAcc(String name, int ID, String pass){
-        currUser = new user(name, ID);
-        if(accountPass.containsKey(name)){
-            return;
-        }
+    public void createAcc(String name,  String pass){
+        currUser = new user(name, 0);
         db.addUser(name, pass);
     }
+
     public user getCurrUser(){
         return currUser;
     }
@@ -51,9 +49,7 @@ public class accountManager {
         }
         return false;
     }
-    public void createAcc(String name,String Pass){
-        accountPass.put(name,Pass);
-    }
+
     public user searchAccountByName(String name){
         return db.searchAccontByName(name);
     }

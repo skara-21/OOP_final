@@ -18,7 +18,7 @@ public class HomePageServlet extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         quizManager qm=(quizManager) request.getServletContext().getAttribute("QUIZ");
-        System.out.println("hello");
+
         ArrayList<quiz> popularQuizzes = qm.getPopularQuizzes();
         ArrayList<quiz> recentlyCreatedQuizzes = qm.getRecentlyCreatedQuizzes();
         ArrayList<quiz> userCreatedQuizzes = qm.getUserCreatedQuizzes();

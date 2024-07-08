@@ -30,6 +30,7 @@ public class quiz {
        dbquiz=new quizDatabase();
    }
 
+
    public void setDescription(String desc){
        description=desc;
    }
