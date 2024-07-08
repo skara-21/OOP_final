@@ -1,3 +1,4 @@
+
 <%@ page import="webhelper.*" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +31,7 @@
         </div>
 
         <div class="profile_sect">
+            <h2 class="user_name"><%= request.getAttribute("username1")%></h2>
             <a href="profile.jsp" class="user_section">
                 <i class="fa-regular fa-user"></i>
             </a>
@@ -52,7 +54,7 @@
         <div class="profile_div2">
 
                 <div class="profile_div2_name">
-                    <h1><%=request.getAttribute("username1")%></h1>
+                    <h2><%= request.getAttribute("username1")%></h2>
 
 
                 </div>
@@ -76,5 +78,4 @@
 
 </div>
 </body>
-
 </html>
