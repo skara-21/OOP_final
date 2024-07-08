@@ -25,6 +25,12 @@
         <a href="HomePage.jsp" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
         </a>
+        <form action="HomePageServlet" method="post">
+            <div class="search">
+                <input type="text" id="searchName" name="searchName" required minlength="4" maxlength="64" size="20" />
+                <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
         <div class="friends_section">
             <i class="fas fa-user-friends"></i>
             <i class="fa-solid fa-message"></i>
@@ -47,7 +53,7 @@
             <div class="profile_div1_image">
                 <h2 class="profile_image"> Profile Image</h2>
                 <div class="addToProfile">
-                    <input type="text" placeholder="Enter URL" size="25">
+                    <input type="text" class="enter_det" placeholder="Enter URL" size="25">
                     <button class="add_photo" type="submit" class>Add photo</button>
                 </div>
             </div>
@@ -61,7 +67,10 @@
                     <h2><%= request.getAttribute("username1")%></h2>
                 </div>
                 <div class="profile_div2_created">
-                    <h2>Created quizes</h2>
+                    <h2 class="profile_image">Created quizes</h2>
+                    <div class="addToProfile">
+                        <button class="add_photo" type="submit" class>Create quiz</button>
+                    </div>
                 </div>
         </div>
 

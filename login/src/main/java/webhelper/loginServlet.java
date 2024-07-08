@@ -15,6 +15,7 @@ public class loginServlet extends HttpServlet {
         accountManager db=(accountManager) request.getServletContext().getAttribute("MY_DB");
         if(db.correctCredentials(request.getParameter("username"),request.getParameter("pass"))){
 
+            request.setAttribute("name", request.getParameter("username"));
             db.setAcc(request.getParameter("username"));
             RequestDispatcher tmp=request.getRequestDispatcher("HomePage.jsp");
             tmp.forward(request,response);

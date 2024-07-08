@@ -27,9 +27,8 @@
             </a>
             <form action="HomePageServlet" method="post">
                 <div class="search">
-                    <label for="searchName" class="search_icon"><i class="fas fa-search"></i></label>
                     <input type="text" id="searchName" name="searchName" required minlength="4" maxlength="64" size="20" />
-                    <button type="submit">Search</button>
+                    <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
                 </div>
             </form>
 
@@ -37,11 +36,15 @@
                 <i class="fas fa-user-friends"></i>
                 <i class="fa-solid fa-message"></i>
             </div>
-            <form action="profileServlet" method="post">
-                <button type="submit" class="user_section">
-                    <i class="fa-regular fa-user"></i>
-                </button>
-            </form>
+            <div class="profile_sect">
+                <h2 class="user_name"><%= request.getAttribute("name")%></h2>
+                <form action="profileServlet" method="post">
+                    <button type="submit" class="user_section">
+                        <i class="fa-regular fa-user"></i>
+                    </button>
+                </form>
+            </div>
+
 
 
         </header>
