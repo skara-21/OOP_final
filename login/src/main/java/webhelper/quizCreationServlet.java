@@ -35,7 +35,7 @@ public class quizCreationServlet extends HttpServlet {
 
         db.setCurrQuiz(newQuiz);
         request.setAttribute("currQuiz", newQuiz);
-        request.getRequestDispatcher("Questions.jsp").forward(request, response);
+        request.getRequestDispatcher("Questions2.jsp").forward(request, response);
 
     }
 }

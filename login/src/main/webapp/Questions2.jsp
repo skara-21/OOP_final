@@ -43,22 +43,18 @@
         <form action="chooseTypeServlet" method="post">
             <div class="create_quiz create_question">
                 <form action="SubmitQuizServlet" method="post">
-                <div class="quiz_info ">
-                    <label class="type_label" for="types">Choose question type:</label>
-                    <select name="types" id="types" required>
-                        <option value="none" class="types" selected disabled hidden>Select an Option</option>
-                        <option value="1" class="types">Question-response</option>
-                        <option value="2" class="types">Fill in</option>
-                        <option value="3" class="types">Multiple choice</option>
-                        <option value="4" class="types">Picture-response</option>
-                    </select>
-                </div>
-                <button type="submit" class="next_but">Next</button>
+                    <div class="quiz_info ">
+                        <label class="type_label" for="types">Choose question type:</label>
+                        <select name="types" id="types" required>
+                            <option value="none" class="types" selected disabled hidden>Select an Option</option>
+                            <option value="1" class="types">Question-response</option>
+                            <option value="2" class="types">Fill in</option>
+                            <option value="3" class="types">Multiple choice</option>
+                            <option value="4" class="types">Picture-response</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="next_but">Next</button>
                 </form>
-
-                    <form action="SubmitQuizServlet" method="post">
-                        <button type="submit" class="finish_but">Finish</button>
-                    </form>
             </div>
         </form>
     </section>

@@ -44,12 +44,15 @@ public class questionServlet extends HttpServlet {
                 currQuiz.addQuestion(question);
                 break;
             case "3":
-                ArrayList<String> answersArray= new ArrayList<>(); {
+                ArrayList<String> answersArray= new ArrayList<>();
                 String option1 = request.getParameter("question_answer1");
                 String option2 = request.getParameter("question_answer2");
                 String option3 = request.getParameter("question_answer3");
                 String option4 = request.getParameter("question_answer4");
-                }
+                answersArray.add(option1);
+                answersArray.add(option2);
+                answersArray.add(option3);
+                answersArray.add(option4);
                 question = new Question(questionName, 3);
                 question.answers = answersArray;
                 int indx=Integer.parseInt(request.getParameter("answers"));

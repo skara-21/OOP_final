@@ -121,7 +121,7 @@
             <input type="submit" value="Login">
         </form>
     </div>
-    <p ><a href="newacc.jsp" class="create_new">Create New Account</a></p>
+    <p><a href="newacc.jsp" class="create_new">Create New Account</a></p>
 </div>
 </body>
 </html>

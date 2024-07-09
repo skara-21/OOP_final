@@ -11,7 +11,7 @@ public class databaseManager {
     protected static String QUESTIONDELLIMITER="~~~~";
     protected static String CORRECTANSWERDELIM="++";
     protected static String USERNAME="root";
-    protected static String PASS="kuchuxa123";
+    protected static String PASS="Luke2425&&";
     protected static String URL="jdbc:mysql://localhost:3306/University";
     protected HashMap<Integer,user> userIduser;
     protected HashMap<Integer,quiz> quizIdquiz;
