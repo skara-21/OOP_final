@@ -43,10 +43,10 @@
         <div class="create_quiz">
             <div class="question_info">
                 <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required minlength="10" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer1" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer2" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer3" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer" placeholder="Enter Answer4" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer1" placeholder="Enter Answer1" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer2" placeholder="Enter Answer2" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer3" placeholder="Enter Answer3" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer" name="question_answer4" placeholder="Enter Answer4" required minlength="0" maxlength="64" size="20" />
             </div>
             <label class="answers_label" for="answers">Choose Correct answer</label>
             <select name="answers" id="answers" value="Choose Answer" required>
