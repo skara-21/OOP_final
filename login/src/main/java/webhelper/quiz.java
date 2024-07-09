@@ -27,7 +27,7 @@ public class quiz {
        this.creator=creator;
        this.creationDate=creationDate;
        this.ordRand=ordRand;
-       dbquiz=new quizDatabase();
+       //dbquiz=new quizDatabase();
    }
 
 

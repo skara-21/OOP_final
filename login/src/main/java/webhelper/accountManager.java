@@ -18,12 +18,6 @@ public class accountManager {
         currUser = db.searchAccontByName(username);
     }
 
-    public void setQuiz(quiz quiz){
-        currQuiz = quiz;
-    }
-    public quiz getQuiz(){
-        return currQuiz;
-    }
 
 
     public void createAcc(String name,  String pass){

@@ -29,9 +29,8 @@ public class quizCreationServlet extends HttpServlet {
         LocalDate currentDate = LocalDate.now();
         java.sql.Date sqlDate = java.sql.Date.valueOf(currentDate);
 
-        quiz newQuiz = new quiz(quizName, curUser, 0, sqlDate,true);
-        qd.add(newQuiz);
-        db.setQuiz(newQuiz);
+        //quiz newQuiz = new quiz(quizName, curUser, 0, sqlDate,true);
+        //qd.add(newQuiz);
 
 
         request.getRequestDispatcher("Questions.jsp").forward(request, response);

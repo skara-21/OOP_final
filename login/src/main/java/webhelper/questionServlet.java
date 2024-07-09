@@ -31,8 +31,7 @@ public class questionServlet extends HttpServlet {
         switch (questionType) {
 
             case "1":
-                String answer = request.getParameter("question_answer");
-                 question = new Question(questionName, 1);
+                request.getRequestDispatcher("Question1.jsp").forward(request, response);
 
                 break;
             case "2":
