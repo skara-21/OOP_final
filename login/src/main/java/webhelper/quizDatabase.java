@@ -109,11 +109,11 @@ public class quizDatabase extends databaseManager {
         ArrayList<String > ans=new ArrayList<String>();
         String query="";
         if(lastDay) {
-                query = "SELECT userID,score,timeUsed FROM quizUser WHERE quizID = " + quizId
+            query = "SELECT userID,score,timeUsed FROM quizUser WHERE quizID = " + quizId
                     + "AND dateTaken >= CURDATE() - INTERVAL 1 DAY AND dateTaken < CURDATE() + INTERVAL 1 DAY "
                     + "ORDER BY score DESC";
         }else{
-                query = "SELECT userID,score,timeUsed FROM quizUser WHERE quizID = " + quizId
+            query = "SELECT userID,score,timeUsed FROM quizUser WHERE quizID = " + quizId
                     + " ORDER BY score DESC";
         }
         try {
@@ -173,12 +173,13 @@ public class quizDatabase extends databaseManager {
 
     public ArrayList<quiz> getLastCreated(int userId) {
         ArrayList<quiz> ans=new ArrayList<quiz>();
-        String query="SELECT q.quizID, q.creationDate" +
-                "FROM quiz q" +
-                "JOIN friends f ON q.creatorID = f.friendID" +
-                "WHERE f.userID = " +userId+
-                "ORDER BY q.creationDate DESC" +
+        String query = "SELECT q.quizID, q.creationDate " +
+                "FROM quiz q " +
+                "JOIN friends f ON q.creatorID = f.friendID " +
+                "WHERE f.userID = " +userId+" "+
+                "ORDER BY q.creationDate DESC " +
                 "LIMIT 3;";
+
         try{
             Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
             Statement st=cn.createStatement();
@@ -197,12 +198,12 @@ public class quizDatabase extends databaseManager {
 
     public ArrayList<quiz> getLastTaken(int userId) {
         ArrayList<quiz> ans=new ArrayList<quiz>();
-        String query="SELECT q.quizID, qu.dateTaken" +
-                "FROM quizUser qu" +
-                "JOIN quiz q ON qu.quizID = q.quizID" +
-                "JOIN friends f ON qu.userID = f.friendID" +
-                "WHERE f.userID = "+ userId+
-                " ORDER BY qu.dateTaken DESC" +
+        String query = "SELECT q.quizID, qu.dateTaken " +
+                "FROM quizUser qu " +
+                "JOIN quiz q ON qu.quizID = q.quizID " +
+                "JOIN friends f ON qu.userID = f.friendID " +
+                "WHERE f.userID = " + userId +
+                " ORDER BY qu.dateTaken DESC " +
                 "LIMIT 3;";
         try{
             Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
@@ -222,13 +223,13 @@ public class quizDatabase extends databaseManager {
 
     public ArrayList<quiz> getPopularQuizzesdb() {
         ArrayList<quiz> ans=new ArrayList<quiz>();
-        String query="SELECT q.quizID, q.quizName, COUNT(qu.quizID) AS takenCount" +
-                "FROM quiz q" +
-                "JOIN quizUser qu ON q.quizID = qu.quizID" +
-                "GROUP BY q.quizID, q.quizName" +
-                "ORDER BY takenCount DESC" +
-                "ORDER BY takenCount DESC" +
+        String query = "SELECT q.quizID, q.quizName, COUNT(qu.quizID) AS takenCount " +
+                "FROM quiz q " +
+                "JOIN quizUser qu ON q.quizID = qu.quizID " +
+                "GROUP BY q.quizID, q.quizName " +
+                "ORDER BY takenCount DESC " +
                 "LIMIT 3;";
+
         try{
             Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
             Statement st=cn.createStatement();
@@ -247,10 +248,11 @@ public class quizDatabase extends databaseManager {
 
     public ArrayList<quiz> getRecentQuizzesdb() {
         ArrayList<quiz> ans=new ArrayList<quiz>();
-        String query="SELECT quizID " +
-                "FROM quiz" +
-                "ORDER BY creationDate DESC" +
+        String query = "SELECT quizID " +
+                "FROM quiz " +
+                "ORDER BY creationDate DESC " +
                 "LIMIT 3;";
+
         try{
             Connection cn=DriverManager.getConnection(URL,USERNAME,PASS);
             Statement st=cn.createStatement();

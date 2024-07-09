@@ -14,6 +14,7 @@ public class user {
     private quizDatabase dbquiz;
     private userDatabase userdb;
     private ArrayList<String> messages;
+    private String profileImageLink;
     public user(String username, int userId){
         this.username=username;
         this.userId=userId;
@@ -21,6 +22,22 @@ public class user {
         friends=new ArrayList<user>();
         quizzesWritten=new ArrayList<quiz>();
         messages = new ArrayList<String>();
+    }
+
+    public void setProfilePic(String URL){
+        userDatabase ud=new userDatabase();
+        ud.insertProfilePic(userId,URL);
+        profileImageLink=URL;
+    }
+
+    public String getProfilePic(){
+        userDatabase ud=new userDatabase();
+        String profURL=ud.getProfilePicdb(userId);
+        if(profURL==null){
+            return "https://i.pinimg.com/564x/c0/27/be/c027bec07c2dc08b9df60921dfd539bd.jpg";
+        }else{
+            return profURL;
+        }
     }
 
     public ArrayList<quiz> getWrittenQuizzes(){
@@ -57,10 +74,10 @@ public class user {
     }
 
     public void createQuiz(quiz newQuiz){
-        dbquiz=new quizDatabase();
-        dbquiz.add(newQuiz);
         quizzesCreated.add(newQuiz);
         newQuiz.createFile();
+        dbquiz=new quizDatabase();
+        dbquiz.add(newQuiz);
     }
 
     public int getlevel(){

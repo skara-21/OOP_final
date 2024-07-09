@@ -24,7 +24,6 @@ public class HomePageServlet extends HttpServlet {
         ArrayList<quiz> recentlyCreatedQuizzes = qm.getRecentQuizzesdb();
         ArrayList<quiz> userCreatedQuizzes = qm.getCreatedQuizesById(am.getCurrUser().userId);
         ArrayList<quiz> userWrittenQuizzes = qm.getWrittenQuizzesById(am.getCurrUser().userId);
-
         request.setAttribute("popularQuizzes", popularQuizzes);
         request.setAttribute("recentlyCreatedQuizzes", recentlyCreatedQuizzes);
         request.setAttribute("userCreatedQuizzes", userCreatedQuizzes);
@@ -48,7 +47,7 @@ public class HomePageServlet extends HttpServlet {
         }
 
 
-        //request.getRequestDispatcher("HomePage.jsp").forward(request, response);
+        request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 
     }
 }

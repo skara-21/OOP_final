@@ -110,4 +110,34 @@ public class userDatabase extends databaseManager{
         return false;
     }
 
+    public String getProfilePicdb(int userId) {
+        try {
+            Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
+            Statement st = cn.createStatement();
+            String query="SELECT profImageLink FROM user WHERE userID="+userId;
+            ResultSet rs=st.executeQuery(query);
+            if(rs.next()){
+                return rs.getString("profImageLink");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void insertProfilePic(int userId, String url) {
+        try {
+            Connection cn = DriverManager.getConnection(URL, USERNAME, PASS);
+            Statement st = cn.createStatement();
+            String query="UPDATE user SET profImageLink='"+url+"' WHERE userID= "+userId;
+            int rows=st.executeUpdate(query);
+            if(rows<=0){
+                System.out.println("Profile link wasn't set");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

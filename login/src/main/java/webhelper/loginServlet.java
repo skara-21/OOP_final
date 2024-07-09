@@ -1,5 +1,6 @@
 package webhelper;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -17,7 +18,7 @@ public class loginServlet extends HttpServlet {
 
             request.setAttribute("name", request.getParameter("username"));
             db.setAcc(request.getParameter("username"));
-            RequestDispatcher tmp=request.getRequestDispatcher("HomePage.jsp");
+            RequestDispatcher tmp=request.getRequestDispatcher("HomePageServlet");
             tmp.forward(request,response);
 
         }else{
