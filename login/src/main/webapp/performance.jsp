@@ -21,9 +21,11 @@
         <i class="fa-solid fa-xmark"></i>
 
 
-        <a href="HomePageServlet" class="header_logo_box">
-            <img class="header_logo" src="images/RacxaIqneba.png">
-        </a>
+        <form action="HomePageServlet" method="post">
+            <button type="submit" class="header_logo_box" style="border: none; background: none;">
+                <img class="header_logo" src="images/RacxaIqneba.png" alt="Home">
+            </button>
+        </form>
         <div class="search">
             <label for="name" class="search_icon"><i class="fas fa-search"></i></label>
             <input type="text" id="name" name="name" required minlength="4" maxlength="64" size="20" />

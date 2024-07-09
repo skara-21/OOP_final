@@ -40,8 +40,12 @@ public class HomePageServlet extends HttpServlet {
         user searchResults = am.searchAccountByName(searchName);
 
         if (searchResults != null) {
-            request.setAttribute("searchResults", searchResults);
+            request.setAttribute("username1",am.getCurrUser().username);
+            request.setAttribute("searchResults", searchResults.username);
             request.getRequestDispatcher("friendProfile.jsp").forward(request, response);
+            return;
+        }else{
+            //return;
         }
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 

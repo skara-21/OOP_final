@@ -63,7 +63,7 @@
         <div class="profile_div2">
 
             <div class="profile_div2_name">
-                <h2><%= request.getAttribute("username1")%></h2>
+                <h2><%= request.getAttribute("searchResults")%></h2>
             </div>
             <div class="profile_div2_created">
                 <h2 class="profile_image">Created quizes</h2>
