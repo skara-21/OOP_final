@@ -47,10 +47,6 @@
                     <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
                 </div>
                 <button type="submit" name="act" class="next_but">Next</button>
-
-                <div class="quest_buts">
-                    <button type="submit" name="act" class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
-                </div>
             </form>
         </div>
     </section>

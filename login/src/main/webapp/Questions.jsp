@@ -42,6 +42,7 @@
     <section class="home_page">
         <form action="chooseTypeServlet" method="post">
             <div class="create_quiz create_question">
+                <form action="SubmitQuizServlet" method="post">
                 <div class="quiz_info ">
                     <label class="type_label" for="types">Choose question type:</label>
                     <select name="types" id="types" required>
@@ -53,6 +54,12 @@
                     </select>
                 </div>
                 <button type="submit" class="next_but">Next</button>
+                </form>
+                <div class="quest_buts">
+                    <form action="SubmitQuizServlet" method="post">
+                        <button type="submit" class="finish_but">Finish</button>
+                    </form>
+                </div>
             </div>
         </form>
     </section>

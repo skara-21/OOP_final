@@ -53,11 +53,6 @@
 
                 <button type="submit" class="next_but">Next</button>
             </form>
-            <div class="quest_buts">
-                <form action="SubmitQuizServlet" method="post">
-                    <button type="submit" class="finish_but">Finish</button>
-                </form>
-            </div>
 
         </div>
     </section>

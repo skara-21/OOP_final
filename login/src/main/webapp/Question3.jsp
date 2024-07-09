@@ -61,11 +61,6 @@
 
                 <button class="next_but" type="submit">Next</button>
             </form>
-            <div class="quest_buts">
-                <form action="SubmitQuizServlet" method="post">
-                    <button type="submit" class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
-                </form>
-            </div>
 
         </div>
     </section>
