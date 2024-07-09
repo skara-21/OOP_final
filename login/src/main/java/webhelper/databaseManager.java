@@ -107,7 +107,8 @@ public class databaseManager {
         while(rs3.next()){
             int userId=rs3.getInt(1);
             int quizId=rs3.getInt(4);
-            userIduser.get(userId).addWrittenQuiz(quizIdquiz.get(quizId));
+            int score= rs3.getInt(2);
+            userIduser.get(userId).addWrittenQuiz(quizIdquiz.get(quizId),score);
         }
         cn.close();
     }

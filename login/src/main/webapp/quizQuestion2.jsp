@@ -41,7 +41,7 @@
         <form action="quizStartServlet" method="post" class="create_quiz">
             <div class="question_info">
                 <h2 class="quiz_title question1"><%=request.getAttribute("question")%></h2>
-                <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+                <input type="text" class="question_answer quest2_answer" name="question1_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
             </div>
             <button type="submit" class="next_but">Next</button>
         </form>

@@ -25,15 +25,18 @@ public class quizStartServlet extends HttpServlet {
         ArrayList<Question> questions = currQuiz.questions;
 
         request.setAttribute("quiz_title", title);
+        boolean isCorrect = false;
         if(index == 0){
            am.curQuestionIndex++;
            request.getRequestDispatcher("quizStart.jsp").forward(request, response);
-           System.out.println(am.curQuestionIndex + "Quiz started");
-        }
-        else if(index <= questions.size()){
+        } else if(index <= questions.size()){
             Question question = questions.get(index - 1);
+            String userAnswer = request.getParameter("question1_answer");
+            am.submitted.add(userAnswer);
             request.setAttribute("question", question.getQuestion());
             if(question.getType() == 1){
+
+                System.out.println(userAnswer);
                 request.getRequestDispatcher("quizQuestion1.jsp").forward(request, response);
             }
             else if(question.getType() == 2){
@@ -54,11 +57,11 @@ public class quizStartServlet extends HttpServlet {
                 request.getRequestDispatcher("quizQuestion4.jsp").forward(request, response);
             }
             am.curQuestionIndex++;
-            System.out.println(am.curQuestionIndex - 1 + "Quiz started");
-        }
-        else {
+        } else {
+            String userAnswer = request.getParameter("question1_answer");
+            am.submitted.add(userAnswer);
             am.curQuestionIndex = 0;
-            request.getRequestDispatcher("HomePageServlet").forward(request, response);
+            request.getRequestDispatcher("summaryServlet").forward(request, response);
         }
 
     }

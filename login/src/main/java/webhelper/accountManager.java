@@ -11,9 +11,11 @@ public class accountManager {
     private userDatabase db;
     public int curQuestionIndex;
     public int score;
+    public ArrayList<String> submitted;
     public accountManager(){
             this.accountPass = new HashMap<>();
             db = new userDatabase();
+            submitted = new ArrayList<String>();
             curQuestionIndex=0;
             score = 0;
     }
@@ -28,6 +30,7 @@ public class accountManager {
         currUser = new user(name, 0);
         db.addUser(name, pass);
     }
+
 
     public user getCurrUser(){
         return currUser;

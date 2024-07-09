@@ -38,16 +38,18 @@
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <div class="create_quiz">
-            <div class="question_info">
-                <h2 class="quiz_title question1"><%= request.getAttribute("question")%></h2>
-                <img src="https://t3.ftcdn.net/jpg/02/95/44/22/360_F_295442295_OXsXOmLmqBUfZreTnGo9PREuAPSLQhff.jpg" alt="horse">
-                <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+        <form action="quizStartServlet" method="post">
+            <div class="create_quiz">
+                <div class="question_info">
+                    <h2 class="quiz_title question1"><%= request.getAttribute("question")%></h2>
+                    <img src="https://t3.ftcdn.net/jpg/02/95/44/22/360_F_295442295_OXsXOmLmqBUfZreTnGo9PREuAPSLQhff.jpg" alt="horse">
+                    <input type="text" class="question_answer quest2_answer" name="question1_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+                </div>
+
+                <button type="submit" class="next_but">Next</button>
+
             </div>
-            <form>
-                <button type="button" class="next_but">Next</button>
-            </form>
-        </div>
+        </form>
     </section>
 </div>
 </body>

@@ -41,36 +41,37 @@
     <!-- SECTION 1 -->
     <section class="home_page">
         <div class="create_quiz">
+            <form action="quizStartServlet" method="post">
             <div class="question_info">
                 <h2 class="quiz_title question1"><%= request.getAttribute("question") %></h2>
                 <ul class="choices">
                     <li>
                         <div class="answer">
-                            <input type="radio" class="choose" name="question0" value="A"/>
+                            <input type="radio" class="choose" name="question1_answer" value="<%=request.getAttribute("answer1") %>"/>
                             <span><%=request.getAttribute("answer1") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
-                            <input type="radio" class="choose" name="question0" value="B"/>
+                            <input type="radio" class="choose" name="question1_answer" value="<%=request.getAttribute("answer2") %>"/>
                             <span><%=request.getAttribute("answer2") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
-                            <input type="radio" class="choose" name="question0" value="C"/>
+                            <input type="radio" class="choose" name="question1_answer" value="<%=request.getAttribute("answer3") %>"/>
                             <span><%=request.getAttribute("answer3") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
-                            <input type="radio" class="choose" name="question0" value="D"/>
+                            <input type="radio" class="choose" name="question1_answer" value="<%=request.getAttribute("answer4") %>"/>
                             <span><%=request.getAttribute("answer4") %></span>
                         </div>
                     </li>
                 </ul>
             </div>
-            <form action="quizStartServlet" method="post">
+
                  <button type="submit" class="next_but">Next</button>
             </form>
         </div>

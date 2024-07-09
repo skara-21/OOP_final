@@ -42,11 +42,7 @@ public class HomePageServlet extends HttpServlet {
         if (searchResults != null) {
             request.setAttribute("searchResults", searchResults);
             request.getRequestDispatcher("friendProfile.jsp").forward(request, response);
-        } else {
-
         }
-
-
         request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 
     }

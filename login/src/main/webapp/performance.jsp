@@ -7,7 +7,8 @@
     <title>Performance Page</title>
     <link rel="shortcut icon" href="images/RacxaIqneba.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
 
 </head>
 
@@ -20,7 +21,7 @@
         <i class="fa-solid fa-xmark"></i>
 
 
-        <a href="homePage.html" class="header_logo_box">
+        <a href="HomePageServlet" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
         </a>
         <div class="search">
@@ -32,7 +33,7 @@
             <i class="fa-solid fa-message"></i>
         </div>
 
-        <a href="contact.html" class="user_section">
+        <a href="profile.jsp" class="user_section">
             <i class="fa-regular fa-user"></i>
         </a>
     </header>
@@ -41,7 +42,7 @@
     <section class="home_page ">
         <div class="performance_div1">
             <div class="performance_quiz_name">
-                <h2>Quiz name</h2>
+                <h2>Quiz name: <%=request.getAttribute("quizName")%></h2>
             </div>
             <div class="performance_quiz_text">
                 <h2>Text</h2>
@@ -52,7 +53,7 @@
                 <h2>Performance details</h2>
             </div>
             <div class="performance_quiz_answers">
-                <h2>Answers</h2>
+                <h2>Score: <%=request.getAttribute("score")%></h2>
             </div>
         </div>
     </section>
