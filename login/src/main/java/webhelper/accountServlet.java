@@ -25,7 +25,7 @@ public class accountServlet extends HttpServlet {
             String pass = (String) request.getParameter("pass");
 
 
-            request.setAttribute("username", username);
+            request.setAttribute("name", username);
             RequestDispatcher tmp=request.getRequestDispatcher("HomePage.jsp");
             tmp.forward(request,response);
 

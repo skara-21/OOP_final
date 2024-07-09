@@ -1,4 +1,4 @@
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,10 +6,6 @@
     <link rel="shortcut icon" href="images/Bulb.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/1f82d9d6d9.js" crossorigin="anonymous"></script>
     <style><%@include file="./styles/reset.css"%></style>
-
-</head>
-<html>
-<head>
 
     <style>
         h1 {
