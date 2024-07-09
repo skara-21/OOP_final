@@ -48,7 +48,7 @@ public class quizPageServlet extends HttpServlet {
                 break;
         }
 
-        request.getRequestDispatcher("quizPage.jsp").forward(request, response);
+        request.getRequestDispatcher("quizStart.jsp").forward(request, response);
 
     }
 }

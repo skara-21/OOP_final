@@ -62,10 +62,10 @@
                 <ul>
                     <% for (quiz quiz : quizzes) { %>
                     <li>
-                        <p>
-                            <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        <form method="post" action="quizPageServlet">
+                            <button type="submit"><%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></button><br>
                             Author: <%= quiz.creator.username %>
-                        </p>
+                        </form>
                     </li>
                     <% } %>
                 </ul>
