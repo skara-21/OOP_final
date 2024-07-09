@@ -52,10 +52,6 @@
         <div class="profile_div1">
             <div class="profile_div1_image">
                 <h2 class="profile_image"> Profile Image</h2>
-                <div class="addToProfile">
-                    <input type="text" class="enter_det" placeholder="Enter URL" size="25">
-                    <button class="add_photo" type="submit" >Add photo</button>
-                </div>
             </div>
             <div class="profile_div1_rating">
                 <h2>Rating</h2>
@@ -63,15 +59,12 @@
         </div>
         <div class="profile_div2">
 
-                <div class="profile_div2_name">
-                    <h2><%= request.getAttribute("username1")%></h2>
-                </div>
-                <div class="profile_div2_created">
-                    <h2 class="profile_image">Created quizes</h2>
-                    <div class="addToProfile">
-                        <button class="add_photo" type="submit" class><a href="createQuiz.jsp"> Create quiz</a></button>
-                    </div>
-                </div>
+            <div class="profile_div2_name">
+                <h2><%= request.getAttribute("username1")%></h2>
+            </div>
+            <div class="profile_div2_created">
+                <h2 class="profile_image">Created quizes</h2>
+            </div>
         </div>
 
         <div class="profile_div3">
@@ -80,8 +73,15 @@
             </div>
         </div>
         <div class="profile_div4">
+            <div class="friend_add">
+                <button type="submit" class="friend_add_but">Add Friend </button>
+            </div>
             <div class="profile_div4_stats">
                 <h2>Statistics</h2>
+            </div>
+            <div class="friend_add">
+                <input type="text" class="enter_mess" size="25">
+                <button type="submit" class="friend_add_but">Send message </button>
             </div>
         </div>
     </section>
