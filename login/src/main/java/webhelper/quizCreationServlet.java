@@ -96,9 +96,5 @@ public class quizCreationServlet extends HttpServlet {
                 request.getRequestDispatcher("Questions.jsp").forward(request, response);
                 break;
         }
-
-
-
-
     }
 }
