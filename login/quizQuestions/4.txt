@@ -1,0 +1,6 @@
+qvizi nomeri 1 is text 
+1
+kitxva nomeri 1
+++
+pasuxi nomeri 1
+~~~~

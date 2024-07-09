@@ -29,9 +29,6 @@ public class questionServlet extends HttpServlet {
         String questionName = request.getParameter("question_name");
         Question question;
         quiz currQuiz = db.getCurrQuiz();
-
-        System.out.println(questionName);
-        System.out.println(questionType);
         switch (questionType) {
 
             case "1":
@@ -69,9 +66,7 @@ public class questionServlet extends HttpServlet {
             default:
                 break;
         }
-
-
-        request.getRequestDispatcher("Questions.jsp").forward(request, response);
+            request.getRequestDispatcher("Questions.jsp").forward(request, response);
 
     }
 }

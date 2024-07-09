@@ -57,11 +57,16 @@
                     <option value="3" class="types">3</option>
                     <option value="4" class="types">4</option>
                 </select>
-                <div class="quest_buts">
-                    <button class="next_but" type="submit"><a href="Questions.jsp" class="quest_link">Next</a></button>
-                    <button class="finish_but" type="submit"><a href="HomePage.jsp" class="finish">Finish</a></button>
-                </div>
+
+
+                <button class="next_but" type="submit">Next</button>
             </form>
+            <div class="quest_buts">
+                <form action="SubmitQuizServlet" method="post">
+                    <button type="submit" class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
+                </form>
+            </div>
+
         </div>
     </section>
 

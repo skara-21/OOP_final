@@ -41,17 +41,22 @@
     <!-- SECTION 1 -->
     <section class="home_page">
         <div class="create_quiz">
-            <div class="question_info">
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required
-                       minlength="10" maxlength="64" size="20" />
-                <input type="text" id="quiz_name1" name="question_name1" placeholder="Enter Image link" required
-                       minlength="10" maxlength="10000" size="20" />
-            </div>
-            <input type="text" class="question_answer quest2_answer" name="question_answer"
-                   placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+            <form action="questionServlet" method="post">
+                <div class="question_info">
+                    <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required
+                           minlength="10" maxlength="64" size="20" />
+                    <input type="text" id="quiz_name1" name="question_name1" placeholder="Enter Image link" required
+                           minlength="10" maxlength="10000" size="20" />
+                </div>
+                <input type="text" class="question_answer quest2_answer" name="question_answer"
+                       placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
+
+                <button type="submit" class="next_but">Next</button>
+            </form>
             <div class="quest_buts">
-                <button class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
+                <form action="SubmitQuizServlet" method="post">
+                    <button type="submit" class="finish_but">Finish</button>
+                </form>
             </div>
 
         </div>
