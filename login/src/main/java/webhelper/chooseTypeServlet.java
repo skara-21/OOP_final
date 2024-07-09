@@ -22,13 +22,16 @@ public class chooseTypeServlet extends HttpServlet {
         quizDatabase qd = (quizDatabase) getServletContext().getAttribute("QUIZ_DATABASE");
         accountManager db=(accountManager) getServletContext().getAttribute("MY_DB");
         user curUser = db.getCurrUser();
+        HttpSession session = request.getSession();
+
 
         String questionType = request.getParameter("types").toString();
         if(request.getParameter("types")==null){
             return;
         }
-        System.out.println(questionType);
-        request.setAttribute("questionType", questionType);
+        //System.out.println(questionType);
+        session.setAttribute("questionType", questionType);
+        //request.getRequestDispatcher("questionServlet").forward(request, response);
             switch (questionType) {
                 case "1":
                     request.getRequestDispatcher("Question1.jsp").forward(request, response);

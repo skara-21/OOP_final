@@ -58,14 +58,19 @@ public class quiz {
         String curDir=System.getProperty("user.dir");
         String dirName="quizQuestions";
         String curFile=quizId+".txt";
-        File f=new File(curDir+File.separator+dirName+File.separator+curFile);
-        try {
-            BufferedWriter zurabi = new BufferedWriter(new FileWriter(f));
+        File dir = new File(curDir + File.separator + dirName + File.separator);
+
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        File f = new File(dir, curFile);
+        try (BufferedWriter zurabi = new BufferedWriter(new FileWriter(f))){
             zurabi.write(description);
             zurabi.write("\n");
             for(int i=0;i<questions.size();i++){
                 Question kit=questions.get(i);
-                zurabi.write(kit.getType());
+                zurabi.write(kit.getType()+"");
                 zurabi.write("\n");
                 zurabi.write(kit.getQuestion());
                 zurabi.write("\n");

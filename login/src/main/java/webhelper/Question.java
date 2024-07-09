@@ -14,7 +14,6 @@ public class Question {
         this.question = question;
         this.type = type;
         answers = new ArrayList<String>();
-        correctAnswer=new ArrayList<String>();
     }
     public void addCorrectAnswer(String correctAns) {
             corAns=correctAns;

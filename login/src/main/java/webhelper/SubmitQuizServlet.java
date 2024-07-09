@@ -7,10 +7,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/quizCreationServlet")
-public class quizCreationServlet extends HttpServlet {
+@WebServlet("/SubmitQuizServlet")
+public class SubmitQuizServlet extends HttpServlet {
 
-    public quizCreationServlet() {
+    public SubmitQuizServlet() {
         super();
     }
 
@@ -23,19 +23,10 @@ public class quizCreationServlet extends HttpServlet {
         accountManager db=(accountManager) getServletContext().getAttribute("MY_DB");
         user curUser = db.getCurrUser();
 
+        quiz Quiz = db.getCurrQuiz();
+        curUser.createQuiz(Quiz);
+        request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 
-        String quizName = request.getParameter("quizName");
-        String desc = request.getParameter("quizDescription" );
-        LocalDate currentDate = LocalDate.now();
-        java.sql.Date sqlDate = java.sql.Date.valueOf(currentDate);
-
-        quiz newQuiz = new quiz(quizName, curUser, 0, sqlDate,true);
-        newQuiz.setDescription(desc);
-        //db.getCurrUser().createQuiz(newQuiz);
-
-        db.setCurrQuiz(newQuiz);
-        request.setAttribute("currQuiz", newQuiz);
-        request.getRequestDispatcher("Questions.jsp").forward(request, response);
 
     }
 }

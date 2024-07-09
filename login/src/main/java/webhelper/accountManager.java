@@ -7,8 +7,8 @@ import java.util.Map;
 public class accountManager {
     private Map<String,String> accountPass;
     private user currUser;
-    private userDatabase db;
     private quiz currQuiz;
+    private userDatabase db;
 
     public accountManager(){
             this.accountPass = new HashMap<>();
@@ -18,8 +18,8 @@ public class accountManager {
     public void setAcc(String username){
         currUser = db.searchAccontByName(username);
     }
-
-
+    public void setCurrQuiz(quiz z){currQuiz=z;}
+    public quiz getCurrQuiz(){return currQuiz;}
 
     public void createAcc(String name,  String pass){
         currUser = new user(name, 0);

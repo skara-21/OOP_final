@@ -17,23 +17,24 @@ public class HomePageServlet extends HttpServlet {
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        quizManager qm=(quizManager) request.getServletContext().getAttribute("QUIZ");
+        quizDatabase qm=(quizDatabase) request.getServletContext().getAttribute("QUIZ");
+        accountManager am=(accountManager) request.getServletContext().getAttribute("MY_DB");
 
-        ArrayList<quiz> popularQuizzes = qm.getPopularQuizzes();
-        ArrayList<quiz> recentlyCreatedQuizzes = qm.getRecentlyCreatedQuizzes();
-        ArrayList<quiz> userCreatedQuizzes = qm.getUserCreatedQuizzes();
-        ArrayList<quiz> userWrittenQuizzes = qm.getUserWrittenQuizzes();
+        ArrayList<quiz> popularQuizzes = qm.getPopularQuizzesdb();
+        ArrayList<quiz> recentlyCreatedQuizzes = qm.getRecentQuizzesdb();
+        ArrayList<quiz> userCreatedQuizzes = qm.getCreatedQuizesById(am.getCurrUser().userId);
+        ArrayList<quiz> userWrittenQuizzes = qm.getWrittenQuizzesById(am.getCurrUser().userId);
 
         request.setAttribute("popularQuizzes", popularQuizzes);
         request.setAttribute("recentlyCreatedQuizzes", recentlyCreatedQuizzes);
         request.setAttribute("userCreatedQuizzes", userCreatedQuizzes);
         request.setAttribute("userWrittenQuizzes", userWrittenQuizzes);
 
-        accountManager am = (accountManager) request.getServletContext().getAttribute("AM");
+        //accountManager am = (accountManager) request.getServletContext().getAttribute("AM");
 
 
-        request.setAttribute("getFeedInfoCreated", qm.createdFeed());
-        request.setAttribute("getFeedInfoTaken", qm.takenFeed());
+        request.setAttribute("getFeedInfoCreated", am.getCurrUser().getFeedInfoCreated());
+        request.setAttribute("getFeedInfoTaken", am.getCurrUser().getFeedInfoTaken());
         request.setAttribute("username", am.getCurrUser().username);
 
         String searchName = request.getParameter("searchName");
@@ -47,7 +48,7 @@ public class HomePageServlet extends HttpServlet {
         }
 
 
-        request.getRequestDispatcher("HomePage.jsp").forward(request, response);
+        //request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 
     }
 }

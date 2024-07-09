@@ -41,26 +41,27 @@
     <!-- SECTION 1 -->
     <section class="home_page">
         <div class="create_quiz">
-            <div class="question_info">
-                <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required minlength="10" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer1" placeholder="Enter Answer1" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer2" placeholder="Enter Answer2" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer3" placeholder="Enter Answer3" required minlength="0" maxlength="64" size="20" />
-                <input type="text" class="question_answer" name="question_answer4" placeholder="Enter Answer4" required minlength="0" maxlength="64" size="20" />
-            </div>
-            <label class="answers_label" for="answers">Choose Correct answer</label>
-            <select name="answers" id="answers" value="Choose Answer" required>
-                <option value="none" class="types" selected disabled hidden>Select an Answer</option>
-                <option value="1" class="types">1</option>
-                <option value="2" class="types">2</option>
-                <option value="3" class="types">3</option>
-                <option value="4" class="types">4</option>
-            </select>
-            <div class="quest_buts">
-                <button class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
-            </div>
-
+            <form action="questionServlet" method="post">
+                <div class="question_info">
+                    <input type="text" id="quiz_name" name="question_name" placeholder="Enter Question" required minlength="10" maxlength="64" size="20" />
+                    <input type="text" class="question_answer" name="question_answer1" placeholder="Enter Answer1" required minlength="0" maxlength="64" size="20" />
+                    <input type="text" class="question_answer" name="question_answer2" placeholder="Enter Answer2" required minlength="0" maxlength="64" size="20" />
+                    <input type="text" class="question_answer" name="question_answer3" placeholder="Enter Answer3" required minlength="0" maxlength="64" size="20" />
+                    <input type="text" class="question_answer" name="question_answer4" placeholder="Enter Answer4" required minlength="0" maxlength="64" size="20" />
+                </div>
+                <label class="answers_label" for="answers">Choose Correct answer</label>
+                <select name="answers" id="answers" value="Choose Answer" required>
+                    <option value="none" class="types" selected disabled hidden>Select an Answer</option>
+                    <option value="1" class="types">1</option>
+                    <option value="2" class="types">2</option>
+                    <option value="3" class="types">3</option>
+                    <option value="4" class="types">4</option>
+                </select>
+                <div class="quest_buts">
+                    <button class="next_but" type="submit"><a href="Questions.jsp" class="quest_link">Next</a></button>
+                    <button class="finish_but" type="submit"><a href="HomePage.jsp" class="finish">Finish</a></button>
+                </div>
+            </form>
         </div>
     </section>
 

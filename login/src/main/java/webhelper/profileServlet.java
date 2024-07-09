@@ -14,13 +14,10 @@ public class profileServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String test = "test";
 
-            request.setAttribute("test", test);
-            request.getRequestDispatcher("profile.jsp").forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        quizManager qm = (quizManager) request.getServletContext().getAttribute("QUIZ");
+        quizDatabase qm = (quizDatabase) request.getServletContext().getAttribute("QUIZ");
         accountManager am = (accountManager) request.getServletContext().getAttribute("MY_DB");
 
         user currUser = am.getCurrUser();

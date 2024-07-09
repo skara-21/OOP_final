@@ -16,19 +16,21 @@ public class initializer implements ServletContextListener {
         accountManager db=new accountManager();
         databaseManager dm=new databaseManager();
         userDatabase udb = new userDatabase();
+        quizDatabase qdb=new quizDatabase();
 
         ServletContext tmp=e.getServletContext();
         tmp.setAttribute("MY_DB",db);
         tmp.setAttribute("MY_DB2",udb);
         tmp.setAttribute("Dm",dm);
+        tmp.setAttribute("QUIZ",qdb);
 
-        try {
+        /*try {
             quizDatabase = new quizDatabase(); // Initializing quiz database
             tmp.setAttribute("QUIZ_DATABASE", quizDatabase);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
-
+*/
 
 
     }
