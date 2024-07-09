@@ -54,6 +54,8 @@
 
 .search_icon {
     color: #FAEDFF;
+    background-color: inherit;
+    border: none;
     font-size: 20px;
 }
 
@@ -250,7 +252,7 @@ h2 {
     height: 430px;
 }
 
-.profile_div1_image {
+.profile_div1_image, .profile_div2_created {
     flex-direction: column;
     justify-content: normal;
 }
@@ -278,6 +280,14 @@ h2 {
     border-radius: 50px;
     padding-inline: 4px;
     padding-block: 4px;
+}
+
+.enter_det {
+    background-color: #FAEDFF;
+    color: #F89EC4;
+    border: none;
+    font-size: 15px;
+    border-radius: 50px;
 }
 
 .profile_div1_rating,
@@ -514,6 +524,15 @@ ul {
 span {
     font-size: 25px;
     color: #FAEDFF;
+}
+
+input[type="text"]::placeholder {
+    color: #F89EC4;
+    padding-left: 5px;
+}
+
+input[type="text"]:focus {
+    outline-color: #F89EC4;
 }
 
 input[type="radio"] {
