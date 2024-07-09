@@ -57,8 +57,8 @@
                 <option value="4" class="types">4</option>
             </select>
             <div class="quest_buts">
-                <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
-                <button class="finish_but"><a href="index.html" class="finish">Finish</a></button>
+                <button class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
+                <button class="finish_but"><a href="HomePage.jsp" class="finish">Finish</a></button>
             </div>
 
         </div>

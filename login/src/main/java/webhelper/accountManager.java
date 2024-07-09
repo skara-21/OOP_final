@@ -8,7 +8,7 @@ public class accountManager {
     private Map<String,String> accountPass;
     private user currUser;
     private userDatabase db;
-
+    private quiz currQuiz;
     public accountManager(){
             this.accountPass = new HashMap<>();
             db = new userDatabase();
@@ -16,6 +16,13 @@ public class accountManager {
 
     public void setAcc(String username){
         currUser = db.searchAccontByName(username);
+    }
+
+    public void setQuiz(quiz quiz){
+        currQuiz = quiz;
+    }
+    public quiz getQuiz(){
+        return currQuiz;
     }
 
 

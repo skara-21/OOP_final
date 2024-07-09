@@ -40,7 +40,7 @@
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <form action="quizCreationServlet" method="post">
+        <form action="quizTypeServlet" method="post">
             <div class="create_quiz create_question">
                 <div class="quiz_info ">
                     <label class="type_label" for="types">Choose question type:</label>
