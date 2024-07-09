@@ -73,15 +73,13 @@
             </div>
         </div>
         <div class="profile_div4">
-            <div class="friend_add">
-                <button type="submit" class="friend_add_but">Add Friend </button>
-            </div>
+                <button type="submit" class="friend_add_but">+ Add Friend </button>
             <div class="profile_div4_stats">
                 <h2>Statistics</h2>
             </div>
             <div class="friend_add">
-                <input type="text" class="enter_mess" size="25">
-                <button type="submit" class="friend_add_but">Send message </button>
+                <input type="text" class="enter_mess" size="25" placeholder="Enter message">
+                <button type="submit" class="send_message">Send message </button>
             </div>
         </div>
     </section>
