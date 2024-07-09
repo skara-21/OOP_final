@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Question {
     private String question;
     private int type;
-    private ArrayList<String> answers;
+    public ArrayList<String> answers;
     private ArrayList<String> correctAnswer;
 
     private String corAns;

@@ -23,8 +23,11 @@ public class chooseTypeServlet extends HttpServlet {
         accountManager db=(accountManager) getServletContext().getAttribute("MY_DB");
         user curUser = db.getCurrUser();
 
-        String questionType = request.getParameter("questionType");
-
+        String questionType = request.getParameter("types").toString();
+        if(request.getParameter("types")==null){
+            return;
+        }
+        System.out.println(questionType);
         request.setAttribute("questionType", questionType);
             switch (questionType) {
                 case "1":

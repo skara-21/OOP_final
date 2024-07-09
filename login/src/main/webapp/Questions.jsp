@@ -21,7 +21,7 @@
         <i class="fa-solid fa-xmark"></i>
 
 
-        <a href="index.html" class="header_logo_box">
+        <a href="HomePage.jsp" class="header_logo_box">
             <img class="header_logo" src="images/RacxaIqneba.png">
         </a>
         <div class="search">
@@ -33,18 +33,18 @@
             <i class="fas fa-user-friends"></i>
             <i class="fa-solid fa-message"></i>
         </div>
-        <a href="contact.html" class="user_section">
+        <a href="profile.jsp" class="user_section">
             <i class="fa-regular fa-user"></i>
         </a>
     </header>
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <form action="quizTypeServlet" method="post">
+        <form action="chooseTypeServlet" method="post">
             <div class="create_quiz create_question">
                 <div class="quiz_info ">
                     <label class="type_label" for="types">Choose question type:</label>
-                    <select name="types" id="types" value="Choose type" required>
+                    <select name="types" id="types" required>
                         <option value="none" class="types" selected disabled hidden>Select an Option</option>
                         <option value="1" class="types">Question-response</option>
                         <option value="2" class="types">Fill in</option>
@@ -52,7 +52,7 @@
                         <option value="4" class="types">Picture-response</option>
                     </select>
                 </div>
-                <button type="submit" class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
+                <button type="submit" class="next_but">Next</button>
             </div>
         </form>
     </section>
