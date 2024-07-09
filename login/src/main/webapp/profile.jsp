@@ -67,7 +67,24 @@
                     <h2><%= request.getAttribute("username1")%></h2>
                 </div>
                 <div class="profile_div2_created">
-                    <h2 class="profile_image">Created quizes</h2>
+                    <h2 class="profile_image"></h2>
+                    <%
+                        quiz[] quizzes1 = (quiz[]) request.getAttribute("recentlyCreatedQuizzes");
+                        if (quizzes1 != null) {
+                            for (quiz quiz : quizzes1) {
+                    %>
+                    <p>
+                        <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        Author: <%= quiz.creator %>
+                    </p>
+                    <%
+                        }
+                    }else{
+                    %>
+                    <h2>Not recently created quizes</h2>
+                    <%
+                        }
+                    %>
                     <div class="addToProfile">
                         <button class="add_photo" type="submit" class><a href="createQuiz.jsp"> Create quiz</a></button>
                     </div>
@@ -76,7 +93,23 @@
 
         <div class="profile_div3">
             <div class="profile_div3_recently">
-                <h2>Recently Done quizes</h2>
+                <%
+                    quiz[] quizzes = (quiz[]) request.getAttribute("WrittenQuizzes");
+                    if (quizzes != null) {
+                        for (quiz quiz : quizzes) {
+                %>
+                <p>
+                    <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                    Author: <%= quiz.creator %>
+                </p>
+                <%
+                    }
+                }else{
+                %>
+                <h2>Not recently Written quizes</h2>
+                <%
+                    }
+                %>
             </div>
         </div>
         <div class="profile_div4">

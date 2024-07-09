@@ -9,6 +9,7 @@ public class accountManager {
     private user currUser;
     private userDatabase db;
     private quiz currQuiz;
+
     public accountManager(){
             this.accountPass = new HashMap<>();
             db = new userDatabase();

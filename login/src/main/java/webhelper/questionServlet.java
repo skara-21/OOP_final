@@ -63,7 +63,5 @@ public class questionServlet extends HttpServlet {
 
 
 
-
-
     }
 }

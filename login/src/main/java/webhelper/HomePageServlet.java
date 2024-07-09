@@ -41,9 +41,9 @@ public class HomePageServlet extends HttpServlet {
 
         if (searchResults != null) {
             request.setAttribute("searchResults", searchResults);
-            request.getRequestDispatcher("profile.jsp").forward(request, response);
+            request.getRequestDispatcher("friendProfile.jsp").forward(request, response);
         } else {
-           //if search is null
+
         }
 
 
