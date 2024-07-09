@@ -9,10 +9,13 @@ public class accountManager {
     private user currUser;
     private quiz currQuiz;
     private userDatabase db;
-
+    public int curQuestionIndex;
+    public int score;
     public accountManager(){
             this.accountPass = new HashMap<>();
             db = new userDatabase();
+            curQuestionIndex=0;
+            score = 0;
     }
 
     public void setAcc(String username){

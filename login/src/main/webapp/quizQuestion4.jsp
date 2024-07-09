@@ -40,11 +40,13 @@
     <section class="home_page">
         <div class="create_quiz">
             <div class="question_info">
-                <h2 class="quiz_title question1">Libero, voluptate nesciunt quisquam animi omnis eum dicta veniam fugit minima eveniet tenetur explicabo minus, quos obcaecati dolorem nam nulla qui incidunt?</h2>
+                <h2 class="quiz_title question1"><%= request.getAttribute("question")%></h2>
                 <img src="https://t3.ftcdn.net/jpg/02/95/44/22/360_F_295442295_OXsXOmLmqBUfZreTnGo9PREuAPSLQhff.jpg" alt="horse">
                 <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
             </div>
-            <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
+            <form>
+                <button type="button" class="next_but">Next</button>
+            </form>
         </div>
     </section>
 </div>

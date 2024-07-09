@@ -17,38 +17,18 @@ public class quizPageServlet extends HttpServlet {
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        quizManager qm =(quizManager) request.getServletContext().getAttribute("QUIZ");
-        quizDatabase quizDatabase = (quizDatabase) getServletContext().getAttribute("QUIZ_DATABASE");
+        //quizManager qm =(quizManager) request.getServletContext().getAttribute("QUIZ");
+        quizDatabase quizDatabase = (quizDatabase) getServletContext().getAttribute("QUIZ");
+        accountManager am = (accountManager) getServletContext().getAttribute("MY_DB");
 
         int quizId = Integer.parseInt(request.getParameter("quizId"));
-        quiz quiz = quizDatabase.getQuizById(quizId);
+        request.setAttribute("quiz_name", quizDatabase.getQuizById(quizId).quizName);
+        request.setAttribute("description", quizDatabase.getQuizById(quizId).description);
 
-        ServletContext context = request.getServletContext();
-        user curUser = (user) context.getAttribute("curUser");
+        request.setAttribute("creator", quizDatabase.getQuizById(quizId).creator.username);
 
-        request.setAttribute("quiz_name", quiz.quizName);
-        request.setAttribute("quiz_id", quizId);
-        request.setAttribute("quiz_text", quiz.description);
-        request.setAttribute("quiz_last", quizDatabase.getLastPerformances(curUser.userId,quizId));
-        request.setAttribute("quiz_highest", quizDatabase.getHighestPerformers(quizId, true));
-        request.setAttribute("quiz_recent", quizDatabase.getRecentTestTakers(quizId));
-        request.setAttribute("quiz_stats", quizDatabase.getStatisticsdb(curUser.userId, true));
-
-        String action = request.getParameter("action");
-        switch (action) {
-            case "practice":
-                request.setAttribute("Mode", "practice");
-                request.getRequestDispatcher("start.jsp").forward(request, response);
-                break;
-            case "start":
-                request.setAttribute("Mode", "normal");
-                request.getRequestDispatcher("start.jsp").forward(request, response);
-                break;
-            default:
-                break;
-        }
-
-        request.getRequestDispatcher("quizStart.jsp").forward(request, response);
+        am.setCurrQuiz(quizDatabase.getQuizById(quizId));
+        request.getRequestDispatcher("quiz.jsp").forward(request, response);
 
     }
 }

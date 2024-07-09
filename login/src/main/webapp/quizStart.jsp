@@ -42,9 +42,11 @@
     <section class="home_page">
         <div class="create_quiz start_quiz">
             <div class="quiz_info">
-                <h2 class="quiz_title">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+                <h2 class="quiz_title"><%= request.getAttribute("quiz_title")%></h2>
             </div>
-            <button class="next_but"><a href="Questions.html" class="quest_link">Start</a></button>
+            <form action="quizStartServlet" method="post">
+                <button type="submit" class="next_but">Start</button>
+            </form>
         </div>
     </section>
 

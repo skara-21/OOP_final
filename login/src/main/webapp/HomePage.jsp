@@ -87,10 +87,11 @@
                 <ul>
                     <% for (quiz quiz : quizzes1) { %>
                     <li>
-                        <p>
-                            <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        <form method="post" action="quizPageServlet">
+                            <input type="hidden" name="quizId" value="<%= quiz.quizId %>">
+                            <button type="submit"><%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></button><br>
                             Author: <%= quiz.creator.username %>
-                        </p>
+                        </form>
                     </li>
                     <% } %>
                 </ul>
@@ -117,10 +118,10 @@
                 <ul>
                     <% for (quiz quiz : quizzes2) { %>
                     <li>
-                        <p>
-                            <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        <form method="post" action="quizPageServlet">
+                            <button type="submit"><%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></button><br>
                             Author: <%= quiz.creator.username %>
-                        </p>
+                        </form>
                     </li>
                     <% } %>
                 </ul>
@@ -142,10 +143,10 @@
                 <ul>
                     <% for (quiz quiz : quizzes3) { %>
                     <li>
-                        <p>
-                            <a href="quizPageServlet?id=<%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></a><br>
+                        <form method="post" action="quizPageServlet">
+                            <button type="submit"><%= quiz.quizId %>">Quiz Name: <%= quiz.quizName %></button><br>
                             Author: <%= quiz.creator.username %>
-                        </p>
+                        </form>
                     </li>
                     <% } %>
                 </ul>

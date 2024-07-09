@@ -31,7 +31,7 @@ public class HomePageServlet extends HttpServlet {
 
         //accountManager am = (accountManager) request.getServletContext().getAttribute("AM");
 
-
+        request.setAttribute("name", am.getCurrUser().username);
         request.setAttribute("getFeedInfoCreated", am.getCurrUser().getFeedInfoCreated());
         request.setAttribute("getFeedInfoTaken", am.getCurrUser().getFeedInfoTaken());
         request.setAttribute("username", am.getCurrUser().username);

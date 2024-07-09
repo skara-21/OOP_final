@@ -39,13 +39,13 @@
 
     <!-- SECTION 1 -->
     <section class="home_page">
-        <div class="create_quiz">
+        <form action="quizStartServlet" method="post" class="create_quiz">
             <div class="question_info">
-                <h2 class="quiz_title question1">Libero, voluptate nesciunt quisquam animi omnis eum dicta veniam fugit minima eveniet tenetur explicabo minus, quos obcaecati dolorem nam nulla qui incidunt?</h2>
+                <h2 class="quiz_title question1"><%=request.getAttribute("question")%></h2>
                 <input type="text" class="question_answer quest2_answer" name="question_answer" placeholder="Enter Answer" required minlength="0" maxlength="64" size="20" />
             </div>
-            <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
-        </div>
+                <button type="submit" class="next_but">Next</button>
+        </form>
     </section>
 
 </div>

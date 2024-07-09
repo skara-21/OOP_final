@@ -20,10 +20,12 @@
         <i class="fa-solid fa-bars"></i>
         <i class="fa-solid fa-xmark"></i>
 
+        <form action="HomePageServlet" method="post">
+            <button type="submit" class="header_logo_box" style="border: none; background: none;">
+                <img class="header_logo" src="images/RacxaIqneba.png" alt="Home">
+            </button>
+        </form>
 
-        <a href="index.html" class="header_logo_box">
-            <img class="header_logo" src="images/RacxaIqneba.png">
-        </a>
         <div class="search">
             <label for="name" class="search_icon"><i class="fas fa-search"></i></label>
             <input type="text" id="name" name="name" required minlength="4" maxlength="64" size="20" />
@@ -33,7 +35,7 @@
             <i class="fas fa-user-friends"></i>
             <i class="fa-solid fa-message"></i>
         </div>
-        <a href="contact.html" class="user_section">
+        <a href="profile.jsp" class="user_section">
             <i class="fa-regular fa-user"></i>
         </a>
     </header>
@@ -42,12 +44,14 @@
     <section class="home_page">
         <div class="quiz_div1">
             <div class="quiz_name">
-                <h2> Quiz name</h2>
+                <h2> <%=request.getAttribute("quiz_name")%></h2>
             </div>
             <div class="quiz_text">
-                <h2>Quiz Text</h2>
+                <h2><%=request.getAttribute("description")%></h2><br>
+                <h2>Creator: <%=request.getAttribute("creator")%></h2>
             </div>
         </div>
+
         <div class="quiz_div2">
             <div class="quiz_last">
                 <h2>Last Performances</h2>
@@ -71,7 +75,9 @@
     </section>
     <div class="quiz_buttons">
         <button class="quiz_practice">Practice</button>
-        <button class="quiz_start">Start</button>
+        <form action = "quizStartServlet"  method="post">
+            <button type="submit" class="quiz_start">Start</button>
+        </form>
         <button class="quiz_edit">Edit</button>
     </div>
 </div>

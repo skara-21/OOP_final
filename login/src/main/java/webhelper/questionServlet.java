@@ -56,7 +56,7 @@ public class questionServlet extends HttpServlet {
                 question = new Question(questionName, 3);
                 question.answers = answersArray;
                 int indx=Integer.parseInt(request.getParameter("answers"));
-                question.addCorrectAnswer(answersArray.get(indx));
+                question.addCorrectAnswer(answersArray.get(indx-1));
                 currQuiz.addQuestion(question);
                 break;
             case "4":

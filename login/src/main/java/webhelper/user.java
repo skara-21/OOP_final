@@ -75,9 +75,9 @@ public class user {
 
     public void createQuiz(quiz newQuiz){
         quizzesCreated.add(newQuiz);
-        newQuiz.createFile();
         dbquiz=new quizDatabase();
         dbquiz.add(newQuiz);
+        newQuiz.createFile();
     }
 
     public int getlevel(){

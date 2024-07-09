@@ -25,7 +25,7 @@ public class SubmitQuizServlet extends HttpServlet {
 
         quiz Quiz = db.getCurrQuiz();
         curUser.createQuiz(Quiz);
-        request.getRequestDispatcher("HomePage.jsp").forward(request, response);
+        request.getRequestDispatcher("HomePageServlet").forward(request, response);
 
 
     }

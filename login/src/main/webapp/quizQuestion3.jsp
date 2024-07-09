@@ -42,35 +42,37 @@
     <section class="home_page">
         <div class="create_quiz">
             <div class="question_info">
-                <h2 class="quiz_title question1">Libero, voluptate nesciunt quisquam animi omnis eum dicta veniam fugit minima eveniet tenetur explicabo minus, quos obcaecati dolorem nam nulla qui incidunt?</h2>
+                <h2 class="quiz_title question1"><%= request.getAttribute("question") %></h2>
                 <ul class="choices">
                     <li>
                         <div class="answer">
                             <input type="radio" class="choose" name="question0" value="A"/>
-                            <span>lorem</span>
+                            <span><%=request.getAttribute("answer1") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
                             <input type="radio" class="choose" name="question0" value="B"/>
-                            <span>lorem</span>
+                            <span><%=request.getAttribute("answer2") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
                             <input type="radio" class="choose" name="question0" value="C"/>
-                            <span>lorem</span>
+                            <span><%=request.getAttribute("answer3") %></span>
                         </div>
                     </li>
                     <li>
                         <div class="answer">
                             <input type="radio" class="choose" name="question0" value="D"/>
-                            <span>lorem</span>
+                            <span><%=request.getAttribute("answer4") %></span>
                         </div>
                     </li>
                 </ul>
             </div>
-            <button class="next_but"><a href="Questions.html" class="quest_link">Next</a></button>
+            <form action="quizStartServlet" method="post">
+                 <button type="submit" class="next_but">Next</button>
+            </form>
         </div>
     </section>
 
