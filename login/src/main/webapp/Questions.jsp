@@ -42,6 +42,7 @@
     <section class="home_page">
         <div class="create_quiz create_question">
             <div class="quiz_info ">
+
                 <label class="type_label" for="types">Choose question type:</label>
                 <select name="types" id="types" value="Choose type" required>
                     <option value="none" class="types" selected disabled hidden>Select an Option</option>
@@ -51,7 +52,7 @@
                     <option value="4" class="types">Picture-response</option>
                 </select>
             </div>
-            <button class="next_but"><a href="Question.html" class="quest_link">Next</a></button>
+            <button type=submit class="next_but"><a href="Questions.jsp" class="quest_link">Next</a></button>
         </div>
     </section>
 

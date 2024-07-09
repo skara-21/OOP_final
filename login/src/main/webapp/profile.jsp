@@ -69,7 +69,7 @@
                 <div class="profile_div2_created">
                     <h2 class="profile_image">Created quizes</h2>
                     <div class="addToProfile">
-                        <button class="add_photo" type="submit" class>Create quiz</button>
+                        <button class="add_photo" type="submit" class><a href="createQuiz.jsp"> Create quiz</a></button>
                     </div>
                 </div>
         </div>
